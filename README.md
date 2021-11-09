@@ -17,6 +17,10 @@ We will build a usable proof-of-concept tool that indicates what data is availab
 
 Ref: Curr Gastroenterol Rep. 2019 Jan 30; 21(2): 5.
 
+![Why single cell is important diagram](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/cancers-13-04923-g001%2Cjpeg.jpeg)
+
+Cancers (Basel). 2021 Oct; 13(19): 4923.
+
 ### Prototype disease subtyping dashboard for researchers
 
 ### Prototype disease subtyping dashboard for clinicians
