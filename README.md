@@ -13,7 +13,7 @@ We will build a usable proof-of-concept tool that indicates what data is availab
 
 ### Example Use Case: Subtyping of colorectal cancer:
 
-![CMS Diagram](
+![CMS Diagram](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/nihms-1039672-f0002.jpeg)
 
 Ref: Curr Gastroenterol Rep. 2019 Jan 30; 21(2): 5.
 
