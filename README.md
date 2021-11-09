@@ -11,6 +11,12 @@ We will build a usable proof-of-concept tool that indicates what data is availab
 
 ## Concise results (what we actually produced) 
 
+### Example Use Case: Subtyping of colorectal cancer:
+
+
+
+Ref: Curr Gastroenterol Rep. 2019 Jan 30; 21(2): 5.
+
 ### Prototype disease subtyping dashboard for researchers
 
 ### Prototype disease subtyping dashboard for clinicians
