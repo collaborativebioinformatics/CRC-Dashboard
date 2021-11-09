@@ -21,6 +21,8 @@ Ref: Curr Gastroenterol Rep. 2019 Jan 30; 21(2): 5.
 
 ### Prototype disease subtyping dashboard for clinicians
 
+### Prototype disease subtyping dashboard for "developers"
+
 ## Team
 
 Emerson Huitt
