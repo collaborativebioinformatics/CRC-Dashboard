@@ -33,7 +33,11 @@ Emerson Huitt
 Nick Giangreco
 Ames Ma
 Anthony Costa
+
+### Advisors
 Vivian Neilley 
+Nuria Queralt Rosinach
+Jerven Bolleman
 
 ### Lead(s)
 
