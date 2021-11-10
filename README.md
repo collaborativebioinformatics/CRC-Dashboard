@@ -29,6 +29,10 @@ Cancers (Basel). 2021 Oct; 13(19): 4923.
 
 #### Example -- TIL infiltrated/MMR as subgraphs of type 1.  
 
+#### Treatment options
+
+![Treatment Options](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Treatment_options_for_subtypes.png)
+
 ##### Reference:  https://gut.bmj.com/content/68/3/465.long
 
 ### Landing page
