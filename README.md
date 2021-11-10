@@ -25,6 +25,12 @@ Nat Med. 2015 Nov; 21(11): 1350–1356.
 
 Cancers (Basel). 2021 Oct; 13(19): 4923.
 
+### Subtypes (subgraphs) of type
+
+#### Example -- TIL infiltrated/MMR as subgraphs of type 1.  
+
+##### Reference:  https://gut.bmj.com/content/68/3/465.long
+
 ### Landing page
 
 ![Landing page](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/New_Landing_Page.png)
