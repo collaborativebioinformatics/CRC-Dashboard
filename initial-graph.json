@@ -1,0 +1,232 @@
+{
+  "nodes": [
+    {
+      "id": "CMS1",
+      "label": "CMS1",
+      "group": "local:clinical-subtype"
+    },
+    {
+      "id": "PRS",
+      "label": "PRS",
+      "group": "local:data-type"
+    },
+    {
+      "id": "miRNA",
+      "label": "miRNA",
+      "group": "local:data-type"
+    },
+    {
+      "id": "scRNA",
+      "label": "scRNA",
+      "group": "local:data-type"
+    },
+    {
+      "id": "Bulk RNA",
+      "label": "Bulk RNA",
+      "group": "local:data-type"
+    },
+    {
+      "id": "NanoString",
+      "label": "NanoString",
+      "group": "local:data-type"
+    }
+  ],
+  "edges": [
+    {
+      "from": "NanoString", 
+      "to": "CMS1",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.75
+    },
+    {
+      "from": "PRS", 
+      "to": "CMS1",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "miRNA", 
+      "to": "CMS1",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "scRNA", 
+      "to": "CMS1",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "Bulk RNA", 
+      "to": "CMS1",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "NanoString", 
+      "to": "CMS2",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.75
+    },
+    {
+      "from": "PRS", 
+      "to": "CMS2",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "miRNA", 
+      "to": "CMS2",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "scRNA", 
+      "to": "CMS2",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "Bulk RNA", 
+      "to": "CMS2",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "NanoString", 
+      "to": "CMS3",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.75
+    },
+    {
+      "from": "PRS", 
+      "to": "CMS3",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "miRNA", 
+      "to": "CMS3",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "scRNA", 
+      "to": "CMS3",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "Bulk RNA", 
+      "to": "CMS3",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "NanoString", 
+      "to": "CMS4",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.75
+    },
+    {
+      "from": "PRS", 
+      "to": "CMS4",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "miRNA", 
+      "to": "CMS4",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "scRNA", 
+      "to": "CMS4",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "Bulk RNA", 
+      "to": "CMS4",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.6
+    },
+    {
+      "from": "Bulk RNA", 
+      "to": "scRNA",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.9
+    },
+    {
+      "from": "Bulk RNA", 
+      "to": "NanoString",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.78,
+      "title": "temporary-value"
+    },
+    {
+      "from": "Bulk RNA", 
+      "to": "PRS",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.78,
+      "title": "temporary-value"
+    },
+    {
+      "from": "miRNA", 
+      "to": "PRS",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.8,
+      "title": "temporary-value"
+    },
+    {
+      "from": "miRNA", 
+      "to": "NanoString",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.8,
+      "title": "temporary-value"
+    },
+    {
+      "from": "miRNA", 
+      "to": "Bulk RNA",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.7,
+      "title": "temporary-value"
+    },
+    {
+      "from": "miRNA", 
+      "to": "scRNA",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.7,
+      "title": "temporary-value"
+    },
+    {
+      "from": "PRS", 
+      "to": "scRNA",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.9,
+      "title": "temporary-value"
+    },
+    {
+      "from": "PRS", 
+      "to": "NanoString",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.9,
+      "title": "temporary-value"
+    },
+    {
+      "from": "PRS", 
+      "to": "scRNA",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.8,
+      "title": "temporary-value"
+    },
+    {
+      "from": "NanoString", 
+      "to": "scRNA",
+      "label": "local:contributes-diagnostic-certainty",
+      "value": 0.8,
+      "title": "temporary-value"
+    }
+  ]
+}
