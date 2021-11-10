@@ -44,8 +44,8 @@ Cancers (Basel). 2021 Oct; 13(19): 4923.
 #### Transcriptome
 #### Single cell
 #### PRS and single variants (popgen)
-#### miRNA
-#### metagenomes (for treatment options subgraph)
+#### miRNA (thanks FederatedEGA!)
+#### Metagenomes (for treatment options subgraph)
 #### Epigenomics (coming soon)
 
 ## Team
