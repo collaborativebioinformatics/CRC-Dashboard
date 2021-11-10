@@ -39,15 +39,17 @@ Cancers (Basel). 2021 Oct; 13(19): 4923.
 
 ![Landing page](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/New_Landing_Page.png)
 
-### Prototype disease subtyping dashboard for researchers
+### Prototype disease subtyping dashboard for diagnostic researchers
 
 ![Researcher Dashboard](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Researchers_dashboard.png)
+
+![Contribution graph](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Clin_diagnostics_graph_github.png)
 
 ### Prototype disease subtyping dashboard for "developers"
 
 ![Developer Dashboard](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Developers_dashboard.png)
 
-### Prototype disease subtyping dashboard for "clinicians" -- coming soon. 
+### Prototype disease subtyping dashboard for translational researchers -- coming soon!
 
 ### Data types processed
 
