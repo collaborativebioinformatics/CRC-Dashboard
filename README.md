@@ -27,7 +27,7 @@ Cancers (Basel). 2021 Oct; 13(19): 4923.
 
 ### Landing page
 
-![Landing page](### Prototype disease subtyping dashboard for clinicians)
+![Landing page](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Landing_page.png)
 
 ### Prototype disease subtyping dashboard for researchers
 
