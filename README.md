@@ -25,11 +25,28 @@ Nat Med. 2015 Nov; 21(11): 1350–1356.
 
 Cancers (Basel). 2021 Oct; 13(19): 4923.
 
+### Landing page
+
+![Landing page](### Prototype disease subtyping dashboard for clinicians)
+
 ### Prototype disease subtyping dashboard for researchers
 
-### Prototype disease subtyping dashboard for clinicians
+![Researcher Dashboard](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Researchers_dashboard.png)
 
 ### Prototype disease subtyping dashboard for "developers"
+
+![Developer Dashboard](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Developers_dashboard.png)
+
+### Prototype disease subtyping dashboard for "clinicians" -- coming soon. 
+
+### Data types processed
+
+#### Transcriptome
+#### Single cell
+#### PRS and single variants (popgen)
+#### miRNA
+#### metagenomes (for treatment options subgraph)
+#### Epigenomics (coming soon)
 
 ## Team
 
@@ -47,19 +64,8 @@ Jerven Bolleman
 
 Ben Busby bbusby@dnanexus.com
 
-## Expected outcomes
+### Acknowledgements
 
-MVP of boolean knowledge graph
-+ RNAseq
-+ Federated EGA
-UI directing API calls
-Docker images for tool portability
-Integration with/establishment of Enhanced Variant Sets
-Integration with Flexible Variant Annotation Platforms
-Integration with open clinical reporting system
+#### Thanks to Aina for help with Federated EGA.  Thanks to her colleagues for being patient with me interrupting their zoom call this morning.  
 
-## Expected audience
-
-### Researchers
-
-### Clinicians
+### Thank you!
