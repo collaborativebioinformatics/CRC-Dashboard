@@ -156,7 +156,8 @@
       "from": "Bulk RNA", 
       "to": "scRNA",
       "label": "local:contributes-diagnostic-certainty",
-      "value": 0.9
+      "value": 0.9,
+      "title": "temporary-value"
     },
     {
       "from": "Bulk RNA", 
