@@ -2,938 +2,1597 @@
   "nodes": [
     {
       "id": 109,
-      "label": "Bevacizumab"
+      "label": "Bevacizumab",
+      "type": "drug"
     },
     {
       "id": 110,
-      "label": "C1QA"
+      "label": "C1QA",
+      "type": "gene"
     },
     {
       "id": 111,
-      "label": "C1QB"
+      "label": "C1QB",
+      "type": "gene"
     },
     {
       "id": 112,
-      "label": "C1QC"
+      "label": "C1QC",
+      "type": "gene"
     },
     {
       "id": 113,
-      "label": "FCGR3A"
+      "label": "FCGR3A",
+      "type": "gene"
     },
     {
       "id": 114,
-      "label": "FCGR1A"
+      "label": "FCGR1A",
+      "type": "gene"
     },
     {
       "id": 115,
-      "label": "FCGR2A"
+      "label": "FCGR2A",
+      "type": "gene"
     },
     {
       "id": 116,
-      "label": "FCGR2B"
+      "label": "FCGR2B",
+      "type": "gene"
     },
     {
       "id": 117,
-      "label": "FCGR2C"
+      "label": "FCGR2C",
+      "type": "gene"
     },
     {
       "id": 118,
-      "label": "VEGFA"
+      "label": "VEGFA",
+      "type": "gene"
     },
     {
       "id": 119,
-      "label": "Irinotecan Hydrochloride"
+      "label": "Irinotecan Hydrochloride",
+      "type": "protein"
     },
     {
       "id": 120,
-      "label": "DNA topoisomerase 1"
+      "label": "DNA topoisomerase 1",
+      "type": "protein"
     },
     {
       "id": 121,
-      "label": "DNA topoisomerase I, mitochondrial"
+      "label": "DNA topoisomerase I, mitochondrial",
+      "type": "protein"
     },
     {
       "id": 122,
-      "label": "TOP1"
+      "label": "TOP1",
+      "type": "gene"
     },
     {
       "id": 123,
-      "label": "TOP1MT"
+      "label": "TOP1MT",
+      "type": "gene"
     },
     {
       "id": 124,
-      "label": "Capecitabine"
+      "label": "Capecitabine",
+      "type": "drug"
     },
     {
       "id": 125,
-      "label": "Thymidylate synthase"
+      "label": "Thymidylate synthase",
+      "type": "protein"
     },
     {
       "id": 126,
-      "label": "TYMS"
+      "label": "TYMS",
+      "type": "gene"
     },
     {
       "id": 127,
-      "label": "DNA"
+      "label": "DNA",
+      "type": "nucleic acid"
     },
     {
       "id": 128,
-      "label": "RNA"
+      "label": "RNA",
+      "type": "nucleic-acid"
     },
     {
       "id": 129,
-      "label": "Cetuximab"
+      "label": "Cetuximab",
+      "type": "drug"
     },
     {
       "id": 130,
-      "label": "Epidermal growth factor receptor"
+      "label": "Epidermal growth factor receptor",
+      "type": "protein"
     },
     {
       "id": 131,
-      "label": "EGFR"
+      "label": "EGFR",
+      "type": "gene"
     },
     {
       "id": 132,
-      "label": "Low affinity immunoglobulin gamma Fc region receptor III-B"
+      "label": "Low affinity immunoglobulin gamma Fc region receptor III-B",
+      "type": "protein"
     },
     {
       "id": 133,
-      "label": "FCGR3B"
+      "label": "FCGR3B",
+      "type": "gene"
     },
     {
       "id": 134,
-      "label": "Complement C1q subcomponent subunit A"
+      "label": "Complement C1q subcomponent subunit A",
+      "type": "protein"
     },
     {
       "id": 135,
-      "label": "Complement C1q subcomponent subunit B"
+      "label": "Complement C1q subcomponent subunit B",
+      "type": "protein"
     },
     {
       "id": 136,
-      "label": "Complement C1q subcomponent subunit C"
+      "label": "Complement C1q subcomponent subunit C",
+      "type": "protein"
     },
     {
       "id": 137,
-      "label": "Low affinity immunoglobulin gamma Fc region receptor III-A"
+      "label": "Low affinity immunoglobulin gamma Fc region receptor III-A",
+      "type": "protein"
     },
     {
       "id": 138,
-      "label": "High affinity immunoglobulin gamma Fc receptor I"
+      "label": "High affinity immunoglobulin gamma Fc receptor I",
+      "type": "protein"
     },
     {
       "id": 139,
-      "label": "Low affinity immunoglobulin gamma Fc region receptor II-a"
+      "label": "Low affinity immunoglobulin gamma Fc region receptor II-a",
+      "type": "protein"
     },
     {
       "id": 140,
-      "label": "Ramucirumab"
+      "label": "Ramucirumab",
+      "type": "drug"
     },
     {
       "id": 141,
-      "label": "Vascular endothelial growth factor receptor 2"
+      "label": "Vascular endothelial growth factor receptor 2",
+      "type": "protein"
     },
     {
       "id": 142,
-      "label": "KDR"
+      "label": "KDR",
+      "type": "gene"
     },
     {
       "id": 143,
-      "label": "Oxaliplatin"
+      "label": "Oxaliplatin",
+      "type": "drug"
     },
     {
       "id": 144,
-      "label": "Fluorouracil"
+      "label": "Fluorouracil",
+      "type": "drug"
     },
     {
       "id": 145,
-      "label": "Ipilimumab"
+      "label": "Ipilimumab",
+      "type": "drug"
     },
     {
       "id": 146,
-      "label": "Cytotoxic T-lymphocyte protein 4"
+      "label": "Cytotoxic T-lymphocyte protein 4",
+      "type": "protein"
     },
     {
       "id": 147,
-      "label": "CTLA4"
+      "label": "CTLA4",
+      "type": "gene"
     },
     {
       "id": 148,
-      "label": "Pembrolizumab"
+      "label": "Pembrolizumab",
+      "type": "drug"
     },
     {
       "id": 149,
-      "label": "Programmed cell death protein 1"
+      "label": "Programmed cell death protein 1",
+      "type": "protein"
     },
     {
       "id": 150,
-      "label": "PDCD1"
+      "label": "PDCD1",
+      "type": "gene"
     },
     {
       "id": 151,
-      "label": "Leucovorin Calcium"
+      "label": "Leucovorin Calcium",
+      "type": "drug"
     },
     {
       "id": 152,
-      "label": "Methylenetetrahydrofolate Reductase Deficiency"
+      "label": "Methylenetetrahydrofolate Reductase Deficiency",
+      "type": "pathway"
     },
     {
       "id": 153,
-      "label": "Folate Metabolism"
+      "label": "Folate Metabolism",
+      "type": "pathway"
     },
     {
       "id": 154,
-      "label": "Methotrexate Action Pathway"
+      "label": "Methotrexate Action Pathway",
+      "type": "pathway"
     },
     {
       "id": 155,
-      "label": "Folate Malabsorption, Hereditary"
+      "label": "Folate Malabsorption, Hereditary",
+      "type": "pathway"
     },
     {
       "id": 156,
-      "label": "Trifluridine"
+      "label": "Trifluridine",
+      "type": "drug"
     },
     {
       "id": 157,
-      "label": "Tipiracil"
+      "label": "Tipiracil",
+      "type": "drug"
     },
     {
       "id": 158,
-      "label": "Thymidine phosphorylase"
+      "label": "Thymidine phosphorylase",
+      "type": "protein"
     },
     {
       "id": 159,
-      "label": "TYMP"
+      "label": "TYMP",
+      "type": "gene"
     },
     {
       "id": 160,
-      "label": "Nivolumab"
+      "label": "Nivolumab",
+      "type": "drug"
     },
     {
       "id": 161,
-      "label": "Panitumumab"
+      "label": "Panitumumab",
+      "type": "drug"
     },
     {
       "id": 164,
-      "label": "Regorafenib"
+      "label": "Regorafenib",
+      "type": "drug"
     },
     {
       "id": 165,
-      "label": "Vascular endothelial growth factor receptor 1"
+      "label": "Vascular endothelial growth factor receptor 1",
+      "type": "protein"
     },
     {
       "id": 166,
-      "label": "Vascular endothelial growth factor receptor 3"
+      "label": "Vascular endothelial growth factor receptor 3",
+      "type": "protein"
     },
     {
       "id": 167,
-      "label": "Mast/stem cell growth factor receptor Kit"
+      "label": "Mast/stem cell growth factor receptor Kit",
+      "type": "protein"
     },
     {
       "id": 168,
-      "label": "Platelet-derived growth factor receptor alpha"
+      "label": "Platelet-derived growth factor receptor alpha",
+      "type": "protein"
     },
     {
       "id": 169,
-      "label": "Platelet-derived growth factor receptor beta"
+      "label": "Platelet-derived growth factor receptor beta",
+      "type": "protein"
     },
     {
       "id": 170,
-      "label": "Fibroblast growth factor receptor 1"
+      "label": "Fibroblast growth factor receptor 1",
+      "type": "protein"
     },
     {
       "id": 171,
-      "label": "Fibroblast growth factor receptor 2"
+      "label": "Fibroblast growth factor receptor 2",
+      "type": "protein"
     },
     {
       "id": 172,
-      "label": "Angiopoietin-1 receptor"
+      "label": "Angiopoietin-1 receptor",
+      "type": "protein"
     },
     {
       "id": 173,
-      "label": "Discoidin domain-containing receptor 2"
+      "label": "Discoidin domain-containing receptor 2",
+      "type": "protein"
     },
     {
       "id": 174,
-      "label": " High affinity nerve growth factor receptor"
+      "label": "High affinity nerve growth factor receptor",
+      "type": "protein"
     },
     {
       "id": 175,
-      "label": "Ephrin type-A receptor 2"
+      "label": "Ephrin type-A receptor 2",
+      "type": "protein"
     },
     {
       "id": 176,
-      "label": "RAF proto-oncogene serine/threonine-protein kinase"
+      "label": "RAF proto-oncogene serine/threonine-protein kinase",
+      "type": "protein"
     },
     {
       "id": 177,
-      "label": "Serine/threonine-protein kinase B-raf"
+      "label": "Serine/threonine-protein kinase B-raf",
+      "type": "protein"
     },
     {
       "id": 178,
-      "label": "Mitogen-activated protein kinase 11"
+      "label": "Mitogen-activated protein kinase 11",
+      "type": "protein"
     },
     {
       "id": 179,
-      "label": "Tyrosine-protein kinase FRK"
+      "label": "Tyrosine-protein kinase FRK",
+      "type": "protein"
     },
     {
       "id": 180,
-      "label": "Tyrosine-protein kinase ABL1"
+      "label": "Tyrosine-protein kinase ABL1",
+      "type": "protein"
     },
     {
       "id": 181,
-      "label": "Proto-oncogene tyrosine-protein kinase receptor Ret"
+      "label": "Proto-oncogene tyrosine-protein kinase receptor Ret",
+      "type": "protein"
     },
     {
       "id": 182,
-      "label": "FLT1"
+      "label": "FLT1",
+      "type": "gene"
     },
     {
       "id": 183,
-      "label": "FLT4"
+      "label": "FLT4",
+      "type": "gene"
     },
     {
       "id": 184,
-      "label": "KIT"
+      "label": "KIT",
+      "type": "gene"
     },
     {
       "id": 185,
-      "label": "PDGFRA"
+      "label": "PDGFRA",
+      "type": "gene"
     },
     {
       "id": 186,
-      "label": "PDGFRB"
+      "label": "PDGFRB",
+      "type": "gene"
     },
     {
       "id": 187,
-      "label": "FGFR1"
+      "label": "FGFR1",
+      "type": "gene"
     },
     {
       "id": 188,
-      "label": "FGFR2"
+      "label": "FGFR2",
+      "type": "gene"
     },
     {
       "id": 189,
-      "label": "TEK"
+      "label": "TEK",
+      "type": "gene"
     },
     {
       "id": 190,
-      "label": "DDR2"
+      "label": "DDR2",
+      "type": "gene"
     },
     {
       "id": 191,
-      "label": "NTRK1"
+      "label": "NTRK1",
+      "type": "gene"
     },
     {
       "id": 192,
-      "label": "EPHA2"
+      "label": "EPHA2",
+      "type": "gene"
     },
     {
       "id": 193,
-      "label": "RAF1"
+      "label": "RAF1",
+      "type": "gene"
     },
     {
       "id": 194,
-      "label": "BRAF"
+      "label": "BRAF",
+      "type": "gene"
     },
     {
       "id": 195,
-      "label": "MAPK11"
+      "label": "MAPK11",
+      "type": "gene"
     },
     {
       "id": 196,
-      "label": "FRK"
+      "label": "FRK",
+      "type": "gene"
     },
     {
       "id": 197,
-      "label": "ABL1"
+      "label": "ABL1",
+      "type": "gene"
     },
     {
       "id": 198,
-      "label": "RET"
+      "label": "RET",
+      "type": "gene"
     },
     {
       "id": 199,
-      "label": "Aflibercept"
+      "label": "Aflibercept",
+      "type": "drug"
     },
     {
       "id": 200,
-      "label": "Vascular endothelial growth factor A"
+      "label": "Vascular endothelial growth factor A",
+      "type": "protein"
     },
     {
       "id": 201,
-      "label": "Vascular endothelial growth factor B"
+      "label": "Vascular endothelial growth factor B",
+      "type": "protein"
     },
     {
       "id": 202,
-      "label": "Placenta growth factor"
+      "label": "Placenta growth factor",
+      "type": "protein"
     },
     {
       "id": 203,
-      "label": "VEGFB"
+      "label": "VEGFB",
+      "type": "gene"
     },
     {
       "id": 204,
-      "label": "PGF"
+      "label": "PGF",
+      "type": "gene"
     },
     {
       "id": 205,
-      "label": "Bevacizumab Action Pathway"
+      "label": "Bevacizumab Action Pathway",
+      "type": "pathway"
     },
     {
       "id": 206,
-      "label": "Irinotecan Metabolism Pathway"
+      "label": "Irinotecan Metabolism Pathway",
+      "type": "pathway"
     },
     {
       "id": 207,
-      "label": "Irinotecan Action Pathway"
+      "label": "Irinotecan Action Pathway",
+      "type": "pathway"
     },
     {
       "id": 208,
-      "label": "Capecitabine Action Pathway"
+      "label": "Capecitabine Action Pathway",
+      "type": "pathway"
     },
     {
       "id": 209,
-      "label": "Capecitabine Metabolism Pathway"
+      "label": "Capecitabine Metabolism Pathway",
+      "type": "pathway"
     },
     {
       "id": 210,
-      "label": "Cetuximab Action Pathway"
+      "label": "Cetuximab Action Pathway",
+      "type": "pathway"
     },
     {
       "id": 211,
-      "label": "Fluorouracil Action Pathway"
+      "label": "Fluorouracil Action Pathway",
+      "type": "pathway"
     },
     {
       "id": 212,
-      "label": "Fluorouracil Metabolism Pathway"
+      "label": "Fluorouracil Metabolism Pathway",
+      "type": "pathway"
+    },
+    {
+      "id": 213,
+      "label": "GTPase KRas",
+      "type": "protein"
+    },
+    {
+      "id": 214,
+      "label": "KRAS",
+      "type": "gene"
+    },
+    {
+      "id": 215,
+      "label": "Sotorasib",
+      "type": "experimental drug"
+    },
+    {
+      "id": 216,
+      "label": "FOLFIRI",
+      "type": "drug combination"
+    },
+    {
+      "id": 217,
+      "label": "CMS1",
+      "type": "consensus molecular sequence"
+    },
+    {
+      "id": 218,
+      "label": "CMS2",
+      "type": "consensus molecular sequence"
+    },
+    {
+      "id": 219,
+      "label": "CMS3",
+      "type": "consensus molecular sequence"
+    },
+    {
+      "id": 220,
+      "label": "CMS4",
+      "type": "consensus molecular sequence"
+    },
+    {
+      "id": 221,
+      "label": "MSI+",
+      "type": "tumor attribute"
+    },
+    {
+      "id": 222,
+      "label": "BRAF-V600E",
+      "type": "gene mutation"
+    },
+    {
+      "id": 223,
+      "label": "programmed cell death 1 receptor",
+      "type": "protein"
+    },
+    {
+      "id": 224,
+      "label": "programmed death-ligand 1",
+      "type": "protein"
+    },
+    {
+      "id": 225,
+      "label": "PD1",
+      "type": "gene"
+    },
+    {
+      "id": 226,
+      "label": "PD-L1",
+      "type": "gene"
+    },
+    {
+      "id": 227,
+      "label": "MSI-",
+      "type": "tumor attribute"
+    },
+    {
+      "id": 228,
+      "label": "FOLFOX",
+      "type": "drug combination"
+    },
+    {
+      "id": 229,
+      "label": "Nivolumab + Ipilimumab",
+      "type": "drug combination"
+    },
+    {
+      "id": 230,
+      "label": "Pembrolizumab + FOLFOX",
+      "type": "drug combination"
+    },
+    {
+      "id": 231,
+      "label": "Atezolizumab",
+      "type": "drug"
+    },
+    {
+      "id": 232,
+      "label": "Programmed cell death 1 ligand 1",
+      "type": "protein"
+    },
+    {
+      "id": 233,
+      "label": "CD274",
+      "type": "gene"
+    },
+    {
+      "id": 234,
+      "label": "Dual specificity mitogen-activated protein kinase kinase 1",
+      "type": "protein"
+    },
+    {
+      "id": 235,
+      "label": "MAP2K1",
+      "type": "gene"
+    },
+    {
+      "id": 236,
+      "label": "Cobimetinib",
+      "type": "drug"
+    },
+    {
+      "id": 237,
+      "label": "Cobimetinib + Atezolizumab",
+      "type": "drug combination"
+    },
+    {
+      "id": 238,
+      "label": "Regorafenib + Nivolumab",
+      "type": "drug combination"
+    },
+    {
+      "id": 239,
+      "label": "POLE",
+      "type": "gene"
+    },
+    {
+      "id": 240,
+      "label": "POLE-mutation",
+      "type": "gene mutation"
     }
   ],
   "edges": [
     {
-      "from": 109,
-      "to": 134,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "Complement C1q subcomponent subunit A",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 109,
-      "to": 135,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "Complement C1q subcomponent subunit B",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 109,
-      "to": 136,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "Complement C1q subcomponent subunit C",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 109,
-      "to": 137,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "Low affinity immunoglobulin gamma Fc region receptor III-A",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 109,
-      "to": 138,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "High affinity immunoglobulin gamma Fc receptor I",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 109,
-      "to": 139,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "Low affinity immunoglobulin gamma Fc region receptor II-a",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 109,
-      "to": 200,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "Low affinity immunoglobulin gamma Fc region receptor II-b",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 109,
-      "to": 205,
-      "label": "pathway"
+      "from": "Bevacizumab",
+      "to": "Low affinity immunoglobulin gamma Fc region receptor II-c",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 119,
-      "to": 120,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "Vascular endothelial growth factor A",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 119,
-      "to": 121,
-      "label": "targets"
+      "from": "Bevacizumab",
+      "to": "Bevacizumab Action Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 119,
-      "to": 122,
-      "label": "gene product"
+      "from": "Irinotecan Hydrochloride",
+      "to": "DNA topoisomerase 1",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 119,
-      "to": 123,
-      "label": "gene product"
+      "from": "Irinotecan Hydrochloride",
+      "to": "DNA topoisomerase I, mitochondrial",
+      "label": "targets",
+      "weight": null
     },
     {
-      "from": 119,
-      "to": 206,
-      "label": "pathway"
+      "from": "Irinotecan Hydrochloride",
+      "to": "Irinotecan Metabolism Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 119,
-      "to": 207,
-      "label": "pathway"
+      "from": "Irinotecan Hydrochloride",
+      "to": "Irinotecan Action Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 124,
-      "to": 125,
-      "label": "inhibits"
+      "from": "Capecitabine",
+      "to": "Thymidylate synthase",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 124,
-      "to": 208,
-      "label": "pathway"
+      "from": "Capecitabine",
+      "to": "Capecitabine Action Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 124,
-      "to": 209,
-      "label": "pathway"
+      "from": "Capecitabine",
+      "to": "Capecitabine Metabolism Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 125,
-      "to": 126,
-      "label": "gene product"
+      "from": "Thymidylate synthase",
+      "to": "TYMS",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 124,
-      "to": 127,
-      "label": "destabilizes"
+      "from": "Capecitabine",
+      "to": "DNA",
+      "label": "destabilizes",
+      "weight": null
     },
     {
-      "from": 124,
-      "to": 128,
-      "label": "destabilizes"
+      "from": "Capecitabine",
+      "to": "RNA",
+      "label": "destabilizes",
+      "weight": null
     },
     {
-      "from": 129,
-      "to": 132,
-      "label": "binds"
+      "from": "Cetuximab",
+      "to": "Low affinity immunoglobulin gamma Fc region receptor III-B",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 129,
-      "to": 134,
-      "label": "binds"
+      "from": "Cetuximab",
+      "to": "Complement C1q subcomponent subunit A",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 129,
-      "to": 135,
-      "label": "binds"
+      "from": "Cetuximab",
+      "to": "Complement C1q subcomponent subunit B",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 129,
-      "to": 136,
-      "label": "binds"
+      "from": "Cetuximab",
+      "to": "Complement C1q subcomponent subunit C",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 129,
-      "to": 137,
-      "label": "binds"
+      "from": "Cetuximab",
+      "to": "Low affinity immunoglobulin gamma Fc region receptor III-A",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 129,
-      "to": 138,
-      "label": "binds"
+      "from": "Cetuximab",
+      "to": "High affinity immunoglobulin gamma Fc receptor I",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 129,
-      "to": 139,
-      "label": "binds"
+      "from": "Cetuximab",
+      "to": "Low affinity immunoglobulin gamma Fc region receptor II-a",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 129,
-      "to": 210,
-      "label": "pathway"
+      "from": "Cetuximab",
+      "to": "Cetuximab Action Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 132,
-      "to": 133,
-      "label": "gene product"
+      "from": "Low affinity immunoglobulin gamma Fc region receptor III-B",
+      "to": "FCGR3B",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 134,
-      "to": 110,
-      "label": "gene product"
+      "from": "Complement C1q subcomponent subunit A",
+      "to": "C1QA",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 135,
-      "to": 111,
-      "label": "gene product"
+      "from": "Complement C1q subcomponent subunit B",
+      "to": "C1QB",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 136,
-      "to": 112,
-      "label": "gene product"
+      "from": "Complement C1q subcomponent subunit C",
+      "to": "C1QC",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 137,
-      "to": 113,
-      "label": "gene product"
+      "from": "Low affinity immunoglobulin gamma Fc region receptor III-A",
+      "to": "FCGR3A",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 138,
-      "to": 114,
-      "label": "gene product"
+      "from": "High affinity immunoglobulin gamma Fc receptor I",
+      "to": "FCGR1A",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 139,
-      "to": 115,
-      "label": "gene product"
+      "from": "Low affinity immunoglobulin gamma Fc region receptor II-a",
+      "to": "FCGR2A",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 140,
-      "to": 141,
-      "label": "antagonist"
+      "from": "Ramucirumab",
+      "to": "Vascular endothelial growth factor receptor 2",
+      "label": "antagonist",
+      "weight": null
     },
     {
-      "from": 141,
-      "to": 142,
-      "label": "gene product"
+      "from": "Vascular endothelial growth factor receptor 2",
+      "to": "KDR",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 143,
-      "to": 127,
-      "label": "antagonist"
+      "from": "Oxaliplatin",
+      "to": "DNA",
+      "label": "antagonist",
+      "weight": null
     },
     {
-      "from": 143,
-      "to": 127,
-      "label": "cross-links"
+      "from": "Oxaliplatin",
+      "to": "DNA",
+      "label": "cross-links",
+      "weight": null
     },
     {
-      "from": 144,
-      "to": 127,
-      "label": "destabilizes"
+      "from": "Fluorouracil",
+      "to": "DNA",
+      "label": "destabilizes",
+      "weight": null
     },
     {
-      "from": 144,
-      "to": 128,
-      "label": "destabilizes"
+      "from": "Fluorouracil",
+      "to": "RNA",
+      "label": "destabilizes",
+      "weight": null
     },
     {
-      "from": 144,
-      "to": 125,
-      "label": "unknown"
+      "from": "Fluorouracil",
+      "to": "Thymidylate synthase",
+      "label": "unknown",
+      "weight": null
     },
     {
-      "from": 144,
-      "to": 208,
-      "label": "pathway"
+      "from": "Fluorouracil",
+      "to": "Capecitabine Action Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 144,
-      "to": 209,
-      "label": "pathway"
+      "from": "Fluorouracil",
+      "to": "Capecitabine Metabolism Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 144,
-      "to": 211,
-      "label": "pathway"
+      "from": "Fluorouracil",
+      "to": "Fluorouracil Action Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 144,
-      "to": 212,
-      "label": "pathway"
+      "from": "Fluorouracil",
+      "to": "Fluorouracil Metabolism Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 145,
-      "to": 146,
-      "label": "inhibits"
+      "from": "Ipilimumab",
+      "to": "Cytotoxic T-lymphocyte protein 4",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 145,
-      "to": 146,
-      "label": "antibody"
+      "from": "Ipilimumab",
+      "to": "Cytotoxic T-lymphocyte protein 4",
+      "label": "antibody",
+      "weight": null
     },
     {
-      "from": 146,
-      "to": 147,
-      "label": "gene product"
+      "from": "Cytotoxic T-lymphocyte protein 4",
+      "to": "CTLA4",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 148,
-      "to": 149,
-      "label": "inhibits"
+      "from": "Pembrolizumab",
+      "to": "Programmed cell death protein 1",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 148,
-      "to": 149,
-      "label": "antibody"
+      "from": "Pembrolizumab",
+      "to": "Programmed cell death protein 1",
+      "label": "antibody",
+      "weight": null
     },
     {
-      "from": 151,
-      "to": 152,
-      "label": "pathway"
+      "from": "Programmed cell death protein 1",
+      "to": "PCDC1",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 151,
-      "to": 153,
-      "label": "pathway"
+      "from": "Leucovorin Calcium",
+      "to": "Methylenetetrahydrofolate Reductase Deficiency",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 151,
-      "to": 154,
-      "label": "pathway"
+      "from": "Leucovorin Calcium",
+      "to": "Folate Metabolism",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 151,
-      "to": 155,
-      "label": "pathway"
+      "from": "Leucovorin Calcium",
+      "to": "Methotrexate Action Pathway",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 156,
-      "to": 125,
-      "label": "inhibits"
+      "from": "Leucovorin Calcium",
+      "to": "Folate Malabsorption, Hereditary",
+      "label": "pathway",
+      "weight": null
     },
     {
-      "from": 156,
-      "to": 127,
-      "label": "unknown"
+      "from": "Trifluridine",
+      "to": "Thymidylate synthase",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 157,
-      "to": 158,
-      "label": "inhibits"
+      "from": "Trifluridine",
+      "to": "DNA",
+      "label": "unknown",
+      "weight": null
     },
     {
-      "from": 158,
-      "to": 159,
-      "label": "gene product"
+      "from": "Tipiracil",
+      "to": "Thymidine phosphorylase",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 160,
-      "to": 149,
-      "label": "inhibits"
+      "from": "Thymidine phosphorylase",
+      "to": "TYMP",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 160,
-      "to": 149,
-      "label": "antibody"
+      "from": "Nivolumab",
+      "to": "Programmed cell death protein 1",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 161,
-      "to": 130,
-      "label": "suppresses"
+      "from": "Nivolumab",
+      "to": "Programmed cell death protein 1",
+      "label": "antibody",
+      "weight": null
     },
     {
-      "from": 148,
-      "to": 149,
-      "label": "inhibits"
+      "from": "Panitumumab",
+      "to": "Epidermal growth factor receptor",
+      "label": "suppresses",
+      "weight": null
     },
     {
-      "from": 148,
-      "to": 149,
-      "label": "antibody"
+      "from": "Ramucirumab",
+      "to": "Vascular endothelial growth factor receptor 2",
+      "label": "antagonist",
+      "weight": null
     },
     {
-      "from": 140,
-      "to": 141,
-      "label": "antagonist"
+      "from": "Regorafenib",
+      "to": "Vascular endothelial growth factor receptor 1",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 165,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Vascular endothelial growth factor receptor 2",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 141,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Vascular endothelial growth factor receptor 3",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 166,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Mast/stem cell growth factor receptor Kit",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 167,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Platelet-derived growth factor receptor alpha",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 168,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Platelet-derived growth factor receptor beta",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 169,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Fibroblast growth factor receptor 1",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 170,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Fibroblast growth factor receptor 2",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 171,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Angiopoietin-1 receptor",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 172,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Discoidin domain-containing receptor 2",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 173,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Discoidin domain-containing receptor 2",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 173,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Ephrin type-A receptor 2",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 175,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "RAF proto-oncogene serine/threonine-protein kinase",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 176,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Serine/threonine-protein kinase B-raf",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 177,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Mitogen-activated protein kinase 11",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 178,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Tyrosine-protein kinase FRK",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 179,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Tyrosine-protein kinase ABL1",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 180,
-      "label": "inhibits"
+      "from": "Regorafenib",
+      "to": "Proto-oncogene tyrosine-protein kinase receptor Ret",
+      "label": "inhibits",
+      "weight": null
     },
     {
-      "from": 164,
-      "to": 181,
-      "label": "inhibits"
+      "from": "Vascular endothelial growth factor receptor 1",
+      "to": "FLT1",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 165,
-      "to": 182,
-      "label": "gene product"
+      "from": "Vascular endothelial growth factor receptor 3",
+      "to": "FLT4",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 166,
-      "to": 183,
-      "label": "gene product"
+      "from": "Mast/stem cell growth factor receptor Kit",
+      "to": "KIT",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 167,
-      "to": 184,
-      "label": "gene product"
+      "from": "Platelet-derived growth factor receptor alpha",
+      "to": "PDGFRA",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 168,
-      "to": 185,
-      "label": "gene product"
+      "from": "Platelet-derived growth factor receptor beta",
+      "to": "PDGFRB",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 169,
-      "to": 186,
-      "label": "gene product"
+      "from": "Fibroblast growth factor receptor 1",
+      "to": "FGFR1",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 170,
-      "to": 187,
-      "label": "gene product"
+      "from": "Fibroblast growth factor receptor 2",
+      "to": "FGFR2",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 171,
-      "to": 188,
-      "label": "gene product"
+      "from": "Angiopoietin-1 receptor",
+      "to": "TEK",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 172,
-      "to": 189,
-      "label": "gene product"
+      "from": "Discoidin domain-containing receptor 2",
+      "to": "DDR2",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 173,
-      "to": 190,
-      "label": "gene product"
+      "from": "High affinity nerve growth factor receptor",
+      "to": "NTRK1",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 175,
-      "to": 192,
-      "label": "gene product"
+      "from": "Ephrin type-A receptor 2",
+      "to": "EPHA2",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 176,
-      "to": 193,
-      "label": "gene product"
+      "from": "RAF proto-oncogene serine/threonine-protein kinase",
+      "to": "RAF1",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 177,
-      "to": 194,
-      "label": "gene product"
+      "from": "Serine/threonine-protein kinase B-raf",
+      "to": "BRAF",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 178,
-      "to": 195,
-      "label": "gene product"
+      "from": "Mitogen-activated protein kinase 11",
+      "to": "MAPK11",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 179,
-      "to": 196,
-      "label": "gene product"
+      "from": "Tyrosine-protein kinase FRK",
+      "to": "FRK",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 180,
-      "to": 197,
-      "label": "gene product"
+      "from": "Tyrosine-protein kinase ABL1",
+      "to": "ABL1",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 181,
-      "to": 198,
-      "label": "gene product"
+      "from": "Proto-oncogene tyrosine-protein kinase receptor Ret",
+      "to": "RET",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 199,
-      "to": 200,
-      "label": "binds"
+      "from": "Aflibercept",
+      "to": "Vascular endothelial growth factor A",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 199,
-      "to": 201,
-      "label": "binds"
+      "from": "Aflibercept",
+      "to": "Vascular endothelial growth factor B",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 199,
-      "to": 202,
-      "label": "binds"
+      "from": "Aflibercept",
+      "to": "Placenta growth factor",
+      "label": "binds",
+      "weight": null
     },
     {
-      "from": 200,
-      "to": 118,
-      "label": "gene product"
+      "from": "Vascular endothelial growth factor A",
+      "to": "VEGFA",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 201,
-      "to": 203,
-      "label": "gene product"
+      "from": "Vascular endothelial growth factor B",
+      "to": "VEGFB",
+      "label": "gene product",
+      "weight": null
     },
     {
-      "from": 202,
-      "to": 204,
-      "label": "gene product"
+      "from": "Placenta growth factor",
+      "to": "PGF",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "Low affinity immunoglobulin gamma Fc region receptor II-b",
+      "to": "FCGR2B",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "Low affinity immunoglobulin gamma Fc region receptor II-c",
+      "to": "FCGR2C",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "DNA topoisomerase 1",
+      "to": "TOP1",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "DNA topoisomerase I, mitochondrial",
+      "to": "TOP1MT",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "Cetuximab",
+      "to": "Epidermal growth factor receptor",
+      "label": "binds",
+      "weight": null
+    },
+    {
+      "from": "Epidermal growth factor receptor",
+      "to": "EGFR",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "GTPase KRas",
+      "to": "KRAS",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "Sotorasib",
+      "to": "GTPase KRas",
+      "label": "inhibits",
+      "weight": null
+    },
+    {
+      "from": "Leucovorin Calcium",
+      "to": "FOLFIRI",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Fluorouracil",
+      "to": "FOLFIRI",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Irinotecan Hydrochloride",
+      "to": "FOLFIRI",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Programmed cell death protein 1",
+      "to": "PDCD1",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "BRAF-V600E",
+      "to": "BRAF",
+      "label": "gene mutation",
+      "weight": null
+    },
+    {
+      "from": "Cetuximab",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Cetuximab",
+      "to": "CMS2",
+      "label": "treatment association",
+      "weight": 1
+    },
+    {
+      "from": "Bevacizumab",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": 1
+    },
+    {
+      "from": "Cetuximab",
+      "to": "BRAF-V600E",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Cetuximab",
+      "to": "MSI+",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Cetuximab",
+      "to": "CMS4",
+      "label": "treatment association",
+      "weight": 1
+    },
+    {
+      "from": "programmed cell death 1 receptor",
+      "to": "PD1",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "programmed death-ligand 1",
+      "to": "PD-L1",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "programmed cell death 1 receptor",
+      "to": "MSI+",
+      "label": "expressed in",
+      "weight": null
+    },
+    {
+      "from": "programmed death-ligand 1",
+      "to": "MSI+",
+      "label": "expressed in",
+      "weight": null
+    },
+    {
+      "from": "Cytotoxic T-lymphocyte protein 4",
+      "to": "MSI+",
+      "label": "expressed in",
+      "weight": null
+    },
+    {
+      "from": "Pembrolizumab",
+      "to": "MSI+",
+      "label": "treatment association",
+      "weight": 1
+    },
+    {
+      "from": "Pembrolizumab",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": null
+    },
+    {
+      "from": "Nivolumab",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": 1
+    },
+    {
+      "from": "Nivolumab + Ipilimumab",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": 1
+    },
+    {
+      "from": "Pembrolizumab + FOLFOX",
+      "to": "MSI-",
+      "label": "treatment association",
+      "weight": 1
+    },
+    {
+      "from": "Nivolumab",
+      "to": "Nivolumab + Ipilimumab",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Ipilimumab",
+      "to": "Nivolumab + Ipilimumab",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Oxaliplatin",
+      "to": "FOLFOX",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Fluorouracil",
+      "to": "FOLFOX",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Leucovorin Calcium",
+      "to": "FOLFOX",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Pembrolizumab",
+      "to": "Pembrolizumab + FOLFOX",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "FOLFOX",
+      "to": "Pembrolizumab + FOLFOX",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Atezolizumab",
+      "to": "Programmed cell death 1 ligand 1",
+      "label": "inhibits",
+      "weight": null
+    },
+    {
+      "from": "Programmed cell death 1 ligand 1",
+      "to": "CD274",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "Cobimetinib",
+      "to": "Dual specificity mitogen-activated protein kinase kinase 1",
+      "label": "inhibits",
+      "weight": null
+    },
+    {
+      "from": "Dual specificity mitogen-activated protein kinase kinase 1",
+      "to": "MAP2K1",
+      "label": "gene product",
+      "weight": null
+    },
+    {
+      "from": "Atezolizumab",
+      "to": "Cobimetinib + Atezolizumab",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Cobimetinib",
+      "to": "Cobimetinib + Atezolizumab",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Atezolizumab",
+      "to": "MSI+",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Cobimetinib + Atezolizumab",
+      "to": "MSI+",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Regorafenib",
+      "to": "MSI+",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Atezolizumab",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Cobimetinib + Atezolizumab",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Regorafenib",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Regorafenib + Nivolumab",
+      "to": "CMS1",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Regorafenib + Nivolumab",
+      "to": "MSI+",
+      "label": "treatment association",
+      "weight": -1
+    },
+    {
+      "from": "Regorafenib",
+      "to": "Regorafenib + Nivolumab",
+      "label": "part of",
+      "weight": null
+    },
+    {
+      "from": "Nivolumab",
+      "to": "Regorafenib + Nivolumab",
+      "label": "part of",
+      "weight": null
     }
   ]
 }
