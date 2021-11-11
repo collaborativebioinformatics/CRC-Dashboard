@@ -1,0 +1,939 @@
+{
+  "nodes": [
+    {
+      "id": 109,
+      "label": "Bevacizumab"
+    },
+    {
+      "id": 110,
+      "label": "C1QA"
+    },
+    {
+      "id": 111,
+      "label": "C1QB"
+    },
+    {
+      "id": 112,
+      "label": "C1QC"
+    },
+    {
+      "id": 113,
+      "label": "FCGR3A"
+    },
+    {
+      "id": 114,
+      "label": "FCGR1A"
+    },
+    {
+      "id": 115,
+      "label": "FCGR2A"
+    },
+    {
+      "id": 116,
+      "label": "FCGR2B"
+    },
+    {
+      "id": 117,
+      "label": "FCGR2C"
+    },
+    {
+      "id": 118,
+      "label": "VEGFA"
+    },
+    {
+      "id": 119,
+      "label": "Irinotecan Hydrochloride"
+    },
+    {
+      "id": 120,
+      "label": "DNA topoisomerase 1"
+    },
+    {
+      "id": 121,
+      "label": "DNA topoisomerase I, mitochondrial"
+    },
+    {
+      "id": 122,
+      "label": "TOP1"
+    },
+    {
+      "id": 123,
+      "label": "TOP1MT"
+    },
+    {
+      "id": 124,
+      "label": "Capecitabine"
+    },
+    {
+      "id": 125,
+      "label": "Thymidylate synthase"
+    },
+    {
+      "id": 126,
+      "label": "TYMS"
+    },
+    {
+      "id": 127,
+      "label": "DNA"
+    },
+    {
+      "id": 128,
+      "label": "RNA"
+    },
+    {
+      "id": 129,
+      "label": "Cetuximab"
+    },
+    {
+      "id": 130,
+      "label": "Epidermal growth factor receptor"
+    },
+    {
+      "id": 131,
+      "label": "EGFR"
+    },
+    {
+      "id": 132,
+      "label": "Low affinity immunoglobulin gamma Fc region receptor III-B"
+    },
+    {
+      "id": 133,
+      "label": "FCGR3B"
+    },
+    {
+      "id": 134,
+      "label": "Complement C1q subcomponent subunit A"
+    },
+    {
+      "id": 135,
+      "label": "Complement C1q subcomponent subunit B"
+    },
+    {
+      "id": 136,
+      "label": "Complement C1q subcomponent subunit C"
+    },
+    {
+      "id": 137,
+      "label": "Low affinity immunoglobulin gamma Fc region receptor III-A"
+    },
+    {
+      "id": 138,
+      "label": "High affinity immunoglobulin gamma Fc receptor I"
+    },
+    {
+      "id": 139,
+      "label": "Low affinity immunoglobulin gamma Fc region receptor II-a"
+    },
+    {
+      "id": 140,
+      "label": "Ramucirumab"
+    },
+    {
+      "id": 141,
+      "label": "Vascular endothelial growth factor receptor 2"
+    },
+    {
+      "id": 142,
+      "label": "KDR"
+    },
+    {
+      "id": 143,
+      "label": "Oxaliplatin"
+    },
+    {
+      "id": 144,
+      "label": "Fluorouracil"
+    },
+    {
+      "id": 145,
+      "label": "Ipilimumab"
+    },
+    {
+      "id": 146,
+      "label": "Cytotoxic T-lymphocyte protein 4"
+    },
+    {
+      "id": 147,
+      "label": "CTLA4"
+    },
+    {
+      "id": 148,
+      "label": "Pembrolizumab"
+    },
+    {
+      "id": 149,
+      "label": "Programmed cell death protein 1"
+    },
+    {
+      "id": 150,
+      "label": "PDCD1"
+    },
+    {
+      "id": 151,
+      "label": "Leucovorin Calcium"
+    },
+    {
+      "id": 152,
+      "label": "Methylenetetrahydrofolate Reductase Deficiency"
+    },
+    {
+      "id": 153,
+      "label": "Folate Metabolism"
+    },
+    {
+      "id": 154,
+      "label": "Methotrexate Action Pathway"
+    },
+    {
+      "id": 155,
+      "label": "Folate Malabsorption, Hereditary"
+    },
+    {
+      "id": 156,
+      "label": "Trifluridine"
+    },
+    {
+      "id": 157,
+      "label": "Tipiracil"
+    },
+    {
+      "id": 158,
+      "label": "Thymidine phosphorylase"
+    },
+    {
+      "id": 159,
+      "label": "TYMP"
+    },
+    {
+      "id": 160,
+      "label": "Nivolumab"
+    },
+    {
+      "id": 161,
+      "label": "Panitumumab"
+    },
+    {
+      "id": 164,
+      "label": "Regorafenib"
+    },
+    {
+      "id": 165,
+      "label": "Vascular endothelial growth factor receptor 1"
+    },
+    {
+      "id": 166,
+      "label": "Vascular endothelial growth factor receptor 3"
+    },
+    {
+      "id": 167,
+      "label": "Mast/stem cell growth factor receptor Kit"
+    },
+    {
+      "id": 168,
+      "label": "Platelet-derived growth factor receptor alpha"
+    },
+    {
+      "id": 169,
+      "label": "Platelet-derived growth factor receptor beta"
+    },
+    {
+      "id": 170,
+      "label": "Fibroblast growth factor receptor 1"
+    },
+    {
+      "id": 171,
+      "label": "Fibroblast growth factor receptor 2"
+    },
+    {
+      "id": 172,
+      "label": "Angiopoietin-1 receptor"
+    },
+    {
+      "id": 173,
+      "label": "Discoidin domain-containing receptor 2"
+    },
+    {
+      "id": 174,
+      "label": " High affinity nerve growth factor receptor"
+    },
+    {
+      "id": 175,
+      "label": "Ephrin type-A receptor 2"
+    },
+    {
+      "id": 176,
+      "label": "RAF proto-oncogene serine/threonine-protein kinase"
+    },
+    {
+      "id": 177,
+      "label": "Serine/threonine-protein kinase B-raf"
+    },
+    {
+      "id": 178,
+      "label": "Mitogen-activated protein kinase 11"
+    },
+    {
+      "id": 179,
+      "label": "Tyrosine-protein kinase FRK"
+    },
+    {
+      "id": 180,
+      "label": "Tyrosine-protein kinase ABL1"
+    },
+    {
+      "id": 181,
+      "label": "Proto-oncogene tyrosine-protein kinase receptor Ret"
+    },
+    {
+      "id": 182,
+      "label": "FLT1"
+    },
+    {
+      "id": 183,
+      "label": "FLT4"
+    },
+    {
+      "id": 184,
+      "label": "KIT"
+    },
+    {
+      "id": 185,
+      "label": "PDGFRA"
+    },
+    {
+      "id": 186,
+      "label": "PDGFRB"
+    },
+    {
+      "id": 187,
+      "label": "FGFR1"
+    },
+    {
+      "id": 188,
+      "label": "FGFR2"
+    },
+    {
+      "id": 189,
+      "label": "TEK"
+    },
+    {
+      "id": 190,
+      "label": "DDR2"
+    },
+    {
+      "id": 191,
+      "label": "NTRK1"
+    },
+    {
+      "id": 192,
+      "label": "EPHA2"
+    },
+    {
+      "id": 193,
+      "label": "RAF1"
+    },
+    {
+      "id": 194,
+      "label": "BRAF"
+    },
+    {
+      "id": 195,
+      "label": "MAPK11"
+    },
+    {
+      "id": 196,
+      "label": "FRK"
+    },
+    {
+      "id": 197,
+      "label": "ABL1"
+    },
+    {
+      "id": 198,
+      "label": "RET"
+    },
+    {
+      "id": 199,
+      "label": "Aflibercept"
+    },
+    {
+      "id": 200,
+      "label": "Vascular endothelial growth factor A"
+    },
+    {
+      "id": 201,
+      "label": "Vascular endothelial growth factor B"
+    },
+    {
+      "id": 202,
+      "label": "Placenta growth factor"
+    },
+    {
+      "id": 203,
+      "label": "VEGFB"
+    },
+    {
+      "id": 204,
+      "label": "PGF"
+    },
+    {
+      "id": 205,
+      "label": "Bevacizumab Action Pathway"
+    },
+    {
+      "id": 206,
+      "label": "Irinotecan Metabolism Pathway"
+    },
+    {
+      "id": 207,
+      "label": "Irinotecan Action Pathway"
+    },
+    {
+      "id": 208,
+      "label": "Capecitabine Action Pathway"
+    },
+    {
+      "id": 209,
+      "label": "Capecitabine Metabolism Pathway"
+    },
+    {
+      "id": 210,
+      "label": "Cetuximab Action Pathway"
+    },
+    {
+      "id": 211,
+      "label": "Fluorouracil Action Pathway"
+    },
+    {
+      "id": 212,
+      "label": "Fluorouracil Metabolism Pathway"
+    }
+  ],
+  "edges": [
+    {
+      "from": 109,
+      "to": 134,
+      "label": "targets"
+    },
+    {
+      "from": 109,
+      "to": 135,
+      "label": "targets"
+    },
+    {
+      "from": 109,
+      "to": 136,
+      "label": "targets"
+    },
+    {
+      "from": 109,
+      "to": 137,
+      "label": "targets"
+    },
+    {
+      "from": 109,
+      "to": 138,
+      "label": "targets"
+    },
+    {
+      "from": 109,
+      "to": 139,
+      "label": "targets"
+    },
+    {
+      "from": 109,
+      "to": 200,
+      "label": "targets"
+    },
+    {
+      "from": 109,
+      "to": 205,
+      "label": "pathway"
+    },
+    {
+      "from": 119,
+      "to": 120,
+      "label": "targets"
+    },
+    {
+      "from": 119,
+      "to": 121,
+      "label": "targets"
+    },
+    {
+      "from": 119,
+      "to": 122,
+      "label": "gene product"
+    },
+    {
+      "from": 119,
+      "to": 123,
+      "label": "gene product"
+    },
+    {
+      "from": 119,
+      "to": 206,
+      "label": "pathway"
+    },
+    {
+      "from": 119,
+      "to": 207,
+      "label": "pathway"
+    },
+    {
+      "from": 124,
+      "to": 125,
+      "label": "inhibits"
+    },
+    {
+      "from": 124,
+      "to": 208,
+      "label": "pathway"
+    },
+    {
+      "from": 124,
+      "to": 209,
+      "label": "pathway"
+    },
+    {
+      "from": 125,
+      "to": 126,
+      "label": "gene product"
+    },
+    {
+      "from": 124,
+      "to": 127,
+      "label": "destabilizes"
+    },
+    {
+      "from": 124,
+      "to": 128,
+      "label": "destabilizes"
+    },
+    {
+      "from": 129,
+      "to": 132,
+      "label": "binds"
+    },
+    {
+      "from": 129,
+      "to": 134,
+      "label": "binds"
+    },
+    {
+      "from": 129,
+      "to": 135,
+      "label": "binds"
+    },
+    {
+      "from": 129,
+      "to": 136,
+      "label": "binds"
+    },
+    {
+      "from": 129,
+      "to": 137,
+      "label": "binds"
+    },
+    {
+      "from": 129,
+      "to": 138,
+      "label": "binds"
+    },
+    {
+      "from": 129,
+      "to": 139,
+      "label": "binds"
+    },
+    {
+      "from": 129,
+      "to": 210,
+      "label": "pathway"
+    },
+    {
+      "from": 132,
+      "to": 133,
+      "label": "gene product"
+    },
+    {
+      "from": 134,
+      "to": 110,
+      "label": "gene product"
+    },
+    {
+      "from": 135,
+      "to": 111,
+      "label": "gene product"
+    },
+    {
+      "from": 136,
+      "to": 112,
+      "label": "gene product"
+    },
+    {
+      "from": 137,
+      "to": 113,
+      "label": "gene product"
+    },
+    {
+      "from": 138,
+      "to": 114,
+      "label": "gene product"
+    },
+    {
+      "from": 139,
+      "to": 115,
+      "label": "gene product"
+    },
+    {
+      "from": 140,
+      "to": 141,
+      "label": "antagonist"
+    },
+    {
+      "from": 141,
+      "to": 142,
+      "label": "gene product"
+    },
+    {
+      "from": 143,
+      "to": 127,
+      "label": "antagonist"
+    },
+    {
+      "from": 143,
+      "to": 127,
+      "label": "cross-links"
+    },
+    {
+      "from": 144,
+      "to": 127,
+      "label": "destabilizes"
+    },
+    {
+      "from": 144,
+      "to": 128,
+      "label": "destabilizes"
+    },
+    {
+      "from": 144,
+      "to": 125,
+      "label": "unknown"
+    },
+    {
+      "from": 144,
+      "to": 208,
+      "label": "pathway"
+    },
+    {
+      "from": 144,
+      "to": 209,
+      "label": "pathway"
+    },
+    {
+      "from": 144,
+      "to": 211,
+      "label": "pathway"
+    },
+    {
+      "from": 144,
+      "to": 212,
+      "label": "pathway"
+    },
+    {
+      "from": 145,
+      "to": 146,
+      "label": "inhibits"
+    },
+    {
+      "from": 145,
+      "to": 146,
+      "label": "antibody"
+    },
+    {
+      "from": 146,
+      "to": 147,
+      "label": "gene product"
+    },
+    {
+      "from": 148,
+      "to": 149,
+      "label": "inhibits"
+    },
+    {
+      "from": 148,
+      "to": 149,
+      "label": "antibody"
+    },
+    {
+      "from": 151,
+      "to": 152,
+      "label": "pathway"
+    },
+    {
+      "from": 151,
+      "to": 153,
+      "label": "pathway"
+    },
+    {
+      "from": 151,
+      "to": 154,
+      "label": "pathway"
+    },
+    {
+      "from": 151,
+      "to": 155,
+      "label": "pathway"
+    },
+    {
+      "from": 156,
+      "to": 125,
+      "label": "inhibits"
+    },
+    {
+      "from": 156,
+      "to": 127,
+      "label": "unknown"
+    },
+    {
+      "from": 157,
+      "to": 158,
+      "label": "inhibits"
+    },
+    {
+      "from": 158,
+      "to": 159,
+      "label": "gene product"
+    },
+    {
+      "from": 160,
+      "to": 149,
+      "label": "inhibits"
+    },
+    {
+      "from": 160,
+      "to": 149,
+      "label": "antibody"
+    },
+    {
+      "from": 161,
+      "to": 130,
+      "label": "suppresses"
+    },
+    {
+      "from": 148,
+      "to": 149,
+      "label": "inhibits"
+    },
+    {
+      "from": 148,
+      "to": 149,
+      "label": "antibody"
+    },
+    {
+      "from": 140,
+      "to": 141,
+      "label": "antagonist"
+    },
+    {
+      "from": 164,
+      "to": 165,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 141,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 166,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 167,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 168,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 169,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 170,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 171,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 172,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 173,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 173,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 175,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 176,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 177,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 178,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 179,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 180,
+      "label": "inhibits"
+    },
+    {
+      "from": 164,
+      "to": 181,
+      "label": "inhibits"
+    },
+    {
+      "from": 165,
+      "to": 182,
+      "label": "gene product"
+    },
+    {
+      "from": 166,
+      "to": 183,
+      "label": "gene product"
+    },
+    {
+      "from": 167,
+      "to": 184,
+      "label": "gene product"
+    },
+    {
+      "from": 168,
+      "to": 185,
+      "label": "gene product"
+    },
+    {
+      "from": 169,
+      "to": 186,
+      "label": "gene product"
+    },
+    {
+      "from": 170,
+      "to": 187,
+      "label": "gene product"
+    },
+    {
+      "from": 171,
+      "to": 188,
+      "label": "gene product"
+    },
+    {
+      "from": 172,
+      "to": 189,
+      "label": "gene product"
+    },
+    {
+      "from": 173,
+      "to": 190,
+      "label": "gene product"
+    },
+    {
+      "from": 175,
+      "to": 192,
+      "label": "gene product"
+    },
+    {
+      "from": 176,
+      "to": 193,
+      "label": "gene product"
+    },
+    {
+      "from": 177,
+      "to": 194,
+      "label": "gene product"
+    },
+    {
+      "from": 178,
+      "to": 195,
+      "label": "gene product"
+    },
+    {
+      "from": 179,
+      "to": 196,
+      "label": "gene product"
+    },
+    {
+      "from": 180,
+      "to": 197,
+      "label": "gene product"
+    },
+    {
+      "from": 181,
+      "to": 198,
+      "label": "gene product"
+    },
+    {
+      "from": 199,
+      "to": 200,
+      "label": "binds"
+    },
+    {
+      "from": 199,
+      "to": 201,
+      "label": "binds"
+    },
+    {
+      "from": 199,
+      "to": 202,
+      "label": "binds"
+    },
+    {
+      "from": 200,
+      "to": 118,
+      "label": "gene product"
+    },
+    {
+      "from": 201,
+      "to": 203,
+      "label": "gene product"
+    },
+    {
+      "from": 202,
+      "to": 204,
+      "label": "gene product"
+    }
+  ]
+}
