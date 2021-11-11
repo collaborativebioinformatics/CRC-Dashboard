@@ -535,26 +535,41 @@ graph <-
     simplifyVector = T
     )
 nodes <- 
-  graph$nodes
+  graph$nodes %>% 
+  rename(group = type)
 edges <- 
-  graph$edges
-edges <- 
-  inner_join(
-    edges,
-    data.frame(
-      label = unique(edges$label),
-      color = rainbow(length(unique(edges$label)))
-      )
-  )
+  graph$edges %>% 
+  rename(type = label)
 edges$arrows <- "to"
 
 output$treatment_pathway <- 
   renderVisNetwork(
     {
       visNetwork(nodes,edges,width="100%",height="100%") %>%
-        visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE) %>% 
-        visHierarchicalLayout(direction = "DU") %>% 
-        visEdges(color=list(highlight="red"))
+        visNodes(
+          shape = "square",
+          color = list(
+            background = "lightgray", 
+            border = "darkgray",
+            highlight = "yellow"
+            ),
+          shadow = list(
+            enabled = TRUE, 
+            size = 10
+            )
+          ) %>% 
+        visEdges(
+          color=list(
+            color="lightgray",
+            highlight="red"
+            )
+          ) %>% 
+        visInteraction(
+          navigationButtons = TRUE
+          ) %>% 
+        visOptions(
+          manipulation = TRUE
+          )
     }
   )
 ```
@@ -565,29 +580,35 @@ fluidPage(
   fluidRow(
     div(
       class="description",
-      "Network of drug treatments"
+      "By probing the interactors with different CRC treatments, we can more accurately understand drug mechanisms."
     )
   ),
   fluidRow(
     column(
       12,
       div(
-        style="height: 400px;width = 1500px,text-align: center;",
+        style="height: 250px;width = 1500px,text-align: center;",
         visNetworkOutput("treatment_pathway")
       )
     )
   ),
-  fluidRow(
-    column(
-      12,
+  fillRow(
       div(
         class="description",
-        "By probing the interactors with different CRC treatments, we can more accurately understand drug mechanisms."
+        selectInput("cms_type",label = h6("CMS type"),choices = c("CMS1","CMS2","CMS3","CMS4"))
+      ),
+      div(
+        class="description",
+        selectInput("known_mutations",label = h6("Are there nonsynonymous mutations in these genes?"),choices=c("KIT","PDGFRA","FGFR2","BRAF","ABL1"))
+      ),
+      div(
+        class="description",
+        textInput("expressed_genes",label = h6("Expressed genes: "),placeholder = "TP53")
       )
     )
-  )
 )
 ```
+
 For developers
 ======
 
