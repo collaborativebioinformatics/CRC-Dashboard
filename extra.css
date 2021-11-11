@@ -16,6 +16,12 @@
   margin-left: auto;
   margin-right: auto;
 }
+.medium-pic {
+  width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .large-pic {
   width: 500px;
   display: block;

@@ -3,7 +3,8 @@ title: "Elixir biohackathon 2021"
 output: 
   flexdashboard::flex_dashboard:
     storyboard: true
-    theme: journal
+    theme: 
+      bootswatch: minty
     css: extra.css
 runtime: shiny
 theme: journal
@@ -36,6 +37,15 @@ subtype_distributions =
         "Pretty certain" = function()rbeta(N,5,1)
     )
 
+certainty_probas <- 
+    list(
+        "Not certain" = 0.2,
+        "More-than-not certain" = 0.4,
+        "Kinda certain" = 0.6,
+        "Sorta certain" = 0.8,
+        "Pretty certain" = 0.99
+    )
+  
 cms1probas <- subtype_distributions[["Not certain"]]()
 cms2probas <- subtype_distributions[["Not certain"]]()
 cms3probas <- subtype_distributions[["Not certain"]]()
@@ -115,7 +125,7 @@ fluidPage(
 For researchers {.storyboard}
 ======
 
-### Overview of colorectal cancer (CRC)
+### Overview
 
 ```{r}
 
@@ -126,20 +136,12 @@ fluidPage(
       div(
         class="description",
         "Colorectal cancer (CRC) is a heterogeneous cancer that has been recently deep-profiled for molecular characteristics. ",
-        img(class="large-pic",src="CRC.png"),
+        img(class="medium-pic",src="CRC.png"),
         "We next detail the groups of CRC based on molecular characteristics."
         )
       )
-    )
-  )
-```
-
-### CRC subtyping
-
-```{r}
-
-fluidPage(
-  fluidRow(
+    ),
+    fluidRow(
     column(
       12,
       div(
@@ -153,7 +155,7 @@ fluidPage(
   fluidRow(
     column(
       12,
-      img(class="large-pic",src="nihms-1039672-f0002.jpeg")
+      img(class="medium-pic",src="nihms-1039672-f0002.jpeg")
     )
   ),
   fluidRow(
@@ -165,21 +167,26 @@ fluidPage(
     )
     )
   )
-)
+  )
+```
+
+### Subtyping your data
+
+```{r json_graph}
+
+graph_lst <- jsonlite::read_json("initial-graph.json",simplifyVector = T)
 
 ```
 
-### Subtyping your CRC data
-
-```{r}
+```{r cms_types}
 
 fluidPage(
   fluidRow(
     column(
       12,
       div(
-        class="parameters",
-        "To closely mirror algorthmic subtyping, please indicate abberant expression of this group of genes:"
+        class="description",
+        "How confident are you in the CRC subtypes in your dataset, how large is your cohort, and which datatypes did you use to identify them?"
         )
       )
     ),
@@ -187,56 +194,80 @@ fluidPage(
     column(
       12,
       div(
-        textInput("cohort_size","Cohort size",value=c(100),placeholder = 100)
+        textInput("cohort_size",h4("Cohort size"),value=c(100),placeholder = 100)
       )
+    )
+  ),
+  fluidRow(
+    div(
+      style="description",
+      align = "center",
+      checkboxGroupInput(
+        "multidata",
+        label = h4("Data types"),
+        choices = c("Bulk RNA","ssRNA","PRS","miRNA","NanoString"),
+        selected="Bulk RNA"
+        )
     )
   ),
   fillRow(
       div(
-        h3("CMS1: "),
+        h4("CMS1: "),
         radioButtons(
           inputId = "cms1",
           label="",
           choices = c(
-            "Not certain","More-than-not certain","Kinda certain",
-            "Sorta certain","Pretty certain"
+            "Not certain",
+            "More-than-not certain",
+            "Kinda certain",
+            "Sorta certain",
+            "Pretty certain"
             ),
           selected = "Not certain"
           )
         ),
       div(
-        h3("CMS2: "),
+        h4("CMS2: "),
         radioButtons(
           inputId = "cms2",
           label="",
           choices = c(
-            "Not certain","More-than-not certain","Kinda certain",
-            "Sorta certain","Pretty certain"
-          ),
-          selected = "Not certain"
-          )
-        ),
-      div(
-        h3("CMS3: "),
-        radioButtons(
-          inputId = "cms3",
-          label="",
-          choices = c(
-            "Not certain","More-than-not certain","Kinda certain",
-            "Sorta certain","Pretty certain"
+            "Not certain",
+            "More-than-not certain",
+            "Kinda certain",
+            "Sorta certain",
+            "Pretty certain"
             ),
           selected = "Not certain"
           )
         ),
       div(
-        h3("CMS4: "),
+        h4("CMS3: "),
+        radioButtons(
+          inputId = "cms3",
+          label="",
+          choices = c(
+            "Not certain",
+            "More-than-not certain",
+            "Kinda certain",
+            "Sorta certain",
+            "Pretty certain"
+            ),
+          selected = "Not certain"
+          )
+        ),
+      div(
+        h4("CMS4: "),
           radioButtons(
             inputId = "cms4",
-            label="",
-            choices = c(
-              "Not certain","More-than-not certain","Kinda certain",
-              "Sorta certain","Pretty certain"
-              ),
+          label="",
+          choices = c(
+            "Not certain",
+            "More-than-not certain",
+            "Kinda certain",
+            "Sorta certain",
+            "Pretty certain"
+            ),
             selected = "Not certain"
             )
          )
@@ -248,29 +279,105 @@ fluidPage(
 ```{r reactivity}
 subtypeProbas <- reactiveValues()
 
-observeEvent(input$cms1,{
-  cms1_distr <- subtype_distributions[[input$cms1]]()
-  cms2_distr <- subtype_distributions[[input$cms2]]()
-  cms3_distr <- subtype_distributions[[input$cms3]]()
-  cms4_distr <- subtype_distributions[[input$cms4]]()
-    subtypeProbas$cms1_probas <- 
-        cms1_distr %>% as.numeric()
-    subtypeProbas$cms2_probas <- 
-        cms2_distr %>% as.numeric()
-    subtypeProbas$cms3_probas <- 
-        cms3_distr %>% as.numeric()
-    subtypeProbas$cms4_probas <- 
-        cms4_distr %>% as.numeric()
-})
+cohort_size <- reactive({input$cohort_size %>% as.numeric()})
+cms_multidata <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(from %in% input$multidata &
+                 !is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms1 <- reactive({certainty_probas[[input$cms1]] %>% as.numeric()})
+cms1_multiproba <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(to=="CMS1" & 
+                 from %in% input$multidata &
+                 is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms1p <- reactive({cms1()*cms1_multiproba()})
+subtypeProbas$cms1_probas <- 
+  reactive({
+    rbeta(
+      N,
+      1+cms1p()*cohort_size(),
+      1+(cohort_size()-cms1p()*cohort_size())
+      )
+    })
+cms2 <- reactive({certainty_probas[[input$cms2]] %>% as.numeric()})
+cms2_multiproba <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(to=="CMS2" & 
+                 from %in% input$multidata &
+                 is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms2p <- reactive({cms2()*cms2_multiproba()})
+subtypeProbas$cms2_probas <- 
+  reactive({
+    rbeta(
+      N,
+      1+cms2p()*cohort_size(),
+      1+(cohort_size()-cms2p()*cohort_size())
+      )
+    })
+cms3 <- reactive({certainty_probas[[input$cms3]] %>% as.numeric()})
+cms3_multiproba <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(to=="CMS3" & 
+                 from %in% input$multidata &
+                 is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms3p <- reactive({cms3()*cms3_multiproba()})
+subtypeProbas$cms3_probas <- 
+  reactive({
+    rbeta(
+      N,
+      1+cms3p()*cohort_size(),
+      1+(cohort_size()-cms3p()*cohort_size())
+      )
+    })
+cms4 <- reactive({certainty_probas[[input$cms4]] %>% as.numeric()})
+cms4_multiproba <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(to=="CMS4" & 
+                 from %in% input$multidata &
+                 is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms4p <- reactive({cms4()*cms4_multiproba()})
+subtypeProbas$cms4_probas <- 
+  reactive({
+    rbeta(
+      N,
+      1+cms4p()*cohort_size(),
+      1+(cohort_size()-cms4p()*cohort_size())
+      )
+    })
 
 subtypeProbasDT <- 
     reactive({
         tibble(
             values = c(
-                subtypeProbas$cms1_probas,
-                subtypeProbas$cms2_probas,
-                subtypeProbas$cms3_probas,
-                subtypeProbas$cms4_probas
+                subtypeProbas$cms1_probas(),
+                subtypeProbas$cms2_probas(),
+                subtypeProbas$cms3_probas(),
+                subtypeProbas$cms4_probas()
             ),
             subtype = c(
                 rep("CMS1",N),
@@ -280,6 +387,11 @@ subtypeProbasDT <-
                 )
         )
     })
+
+observe({
+    shinyjs::toggleElement(id="chance_text_div",condition=!is.na(input$multidata))
+  })
+
 ```
 
 ### Subtyping confidence
@@ -292,7 +404,7 @@ fluidPage(
       12,
       div(
       class="description",
-      "Of the previous evidence, which subtype do we say our cohort represents?"
+      "Of the previous evidence, we are this certain of our CRC subtyping:"
       ),
       div(
         style="font-size: 30px; text-align: center;",
@@ -328,7 +440,8 @@ fluidPage(
             min = 0, max = 1, 
             label = "",symbol = '%', 
             gaugeSectors(
-              success = c(80, 100), warning = c(40, 79), danger = c(0, 39)
+              success = c(50, 100), warning = c(30, 49), danger = c(0, 29),
+              colors = c("green", "orange", "red")
               )
           )
         }
@@ -342,7 +455,7 @@ fluidPage(
       align="center",
       div(
         style="font-size: 20px; text-align: left;",
-        "What is our certainty interval for each of the possible subtypes?"
+        "Here is our uncertainty in defining CRC subtypes in our data:"
       ),
       div(
       renderPlot(
@@ -358,7 +471,7 @@ fluidPage(
                 geom_point() + 
                 geom_errorbarh(
                     aes(xmin=lwr,xmax=upr),
-                    length=0.1
+                    height=0.1
                     ) +
                 scale_x_continuous(lim=c(0,1)) + 
                 xlab("Credible Interval") + 
@@ -376,83 +489,20 @@ fluidPage(
         )
       )
     )
-    )
-  )
-
-```
-
-### Building evidence for subtypes
-
-```{r json_graph}
-
-graph_lst <- jsonlite::read_json("initial-graph.json",simplifyVector = T)
-
-```
-
-```{r}
-
-fluidPage(
+    ),
   fluidRow(
-    div(
-      class="description",
-      "One multi-checkbox of different datatypes"
-    )
-  ),
-  fluidRow(
-    div(
-      style="description",
-      align = "center",
-      checkboxGroupInput(
-        "multidata",
-        label = h3("Data types"),
-        choices = c("Bulk RNA","ssRNA","PRS","miRNA","NanoString")
-        )
-    )
-  )
-)
-
-multidata <- reactiveValues()
-
-observeEvent(
-  input$multidata,
-  {
-    multidata$proba <- 
-      graph_lst$edges %>% 
-      filter(from %in% input$multidata & 
-               is.na(title)) %>% 
-      distinct(from,value) %>% 
-      summarize(s = mean(value)) %>% 
-      unlist %>% unname
-  }
-)
-
-output$chance_text <- 
-  renderText(
-      {
-        paste0(
-          "Based on the type of data you have, you have a ",
-          multidata$proba,
-          " chance to accurately subtype CRC"
-          )
-        }
-      )
-
-fluidRow(
-  shinyjs::hidden(
+    column(
+      12,
       div(
-        id="chance_text_div",
         class="description",
-        align="center",
-        textOutput("chance_text")
+        "Collecting more data with other datatypes may change your CRC subtyping. Go back, change parameters, and see how you can increase your subtyping abilities!"
+      )
     )
   )
-)
-
-observe({
-    shinyjs::toggleElement(id="chance_text_div",condition=!is.na(input$multidata))
-  })
+  )
 
 ```
+
 
 For physician scientists {.storyboard}
 ======
