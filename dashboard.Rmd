@@ -15,6 +15,8 @@ library(flexdashboard)
 library(shiny)
 library(shinydashboard)
 library(tidyverse)
+library(visNetwork)
+library(jsonlite)
 
 theme_set(theme_classic() + theme(text = element_text(size=16,face="bold")))
 
@@ -89,35 +91,33 @@ fluidPage(
   fluidRow(
     div(
       class = "welcome",
-      "Disease is a mixture! Different molecular characteristics make up different types of disease. Moreover, different data types, such as gene expression, probe these characteristics differently. Each disease subtype is susceptible to treatment options to deliver better patient care. How confident are we in disease subtyping? We introduce this problem and potential solution using colorectal cancer."
+      "Disease is a mixture! Different molecular characteristics make up accepted subtypes of disease. Moreover, different data types, such as gene expression, probe these characteristics differently and provide more or less information. Each disease subtype is susceptible to treatment options to deliver better patient care. Which treatment options are appropriate given molecular characteristics (i.e. targets involved in disease)? We introduce this problem and potential solution using colorectal cancer."
     )
   ),
   fluidRow(
     box(
-      h3("Are you a researcher interested in subtyping disease? Choose 'For researchers' above"),
+      h5("Are you a researcher interested in subtyping disease? Choose 'For researchers' above"),
       img(class="icon",src="researcher.png")
     ),
     box(
-      h3("Are you a physician scientist interested in treatment options for your patient? Choose 'For physician scientists' above"),
+      h5("Are you a physician scientist interested in treatment options for your patient? Choose 'For physician scientists' above"),
       img(class="icon",src="clinician.png")
     ),
     box(
-      h3("Are you a developer interested in how the bayesian inference is done? Choose 'For developers' above"),
+      h5("Are you a developer interested in how the bayesian inference is done? Choose 'For developers' above"),
       img(class="icon",src="developer.png")
     )
   ),
-  fluidRow(
-      column(
-        12,
-        div(
-        style="display: block;margin-left: auto;margin-right: auto;font-weight: bold; word-wrap: break-word;",
-        actionButton(
-          "goButton", 
-          "To get started without errors, click here"
-          )
+  fillRow(
+    column(
+      12,
+      div(
+        class="description",
+        h4("Acknowledgements:"),
+        "Developed by Nick Giangreco, Emerson Huitt, Ben Busby, Ames Ma, and Anthony Costa. Please refer to https://github.com/collaborativebioinformatics/CDS-Dashboard for code related to this project"
         )
-      )
-      )
+    )
+  )
 )
 ```
 
@@ -146,16 +146,17 @@ fluidPage(
       12,
       div(
       class="description",
-      "There are four molecular subtypes i.e. the consensus molecular subtype (CMS) that explain colorectal cancers.",
+      "There are four accepted molecular subtypes i.e. the consensus molecular subtype (CMS) that explain colorectal cancers.",
       br(),
-      a(href="https://www.nature.com/articles/nm.3967","The CMS is a subtyping classification based on marker expression data across expert groups")
+      a(href="https://www.nature.com/articles/nm.3967","This reference showed that the CMS is a subtyping classification based on marker expression data across expert groups")
     )
     )
   ),
   fluidRow(
     column(
       12,
-      img(class="medium-pic",src="nihms-1039672-f0002.jpeg")
+      img(class="medium-pic",src="nihms-1039672-f0002.jpeg"),
+      tags$a(href="https://pubmed.ncbi.nlm.nih.gov/30701321/","Reference")
     )
   ),
   fluidRow(
@@ -163,7 +164,7 @@ fluidPage(
       12,
       div(
       class="description",
-      "By knowing which molecular characteristics are present in our data, we can 'update' our prior belief of which subtypes may be present in our cohort. Furthermore, which type of data we have available will change how confident we are in defining those molecular characteristics."
+      "How likely are we in correctly subtyping disease, given the confidence our data is showing characteristics for accepted subtypes? How might this confidence change with evidence from different datatypes?"
     )
     )
   )
@@ -186,7 +187,7 @@ fluidPage(
       12,
       div(
         class="description",
-        "How confident are you in the CRC subtypes in your dataset, how large is your cohort, and which datatypes did you use to identify them?"
+        "How confident are you in the CRC subtypes in your dataset, how large is your cohort (i.e. provide the rough generalizability of your evidence), and which datatypes did you use to identify them?"
         )
       )
     ),
@@ -194,7 +195,7 @@ fluidPage(
     column(
       12,
       div(
-        textInput("cohort_size",h4("Cohort size"),value=c(100),placeholder = 100)
+        textInput("cohort_size",h6("Cohort size"),value=c(100),placeholder = 100)
       )
     )
   ),
@@ -204,7 +205,7 @@ fluidPage(
       align = "center",
       checkboxGroupInput(
         "multidata",
-        label = h4("Data types"),
+        label = h6("Data types"),
         choices = c("Bulk RNA","ssRNA","PRS","miRNA","NanoString"),
         selected="Bulk RNA"
         )
@@ -212,7 +213,7 @@ fluidPage(
   ),
   fillRow(
       div(
-        h4("CMS1: "),
+        h6("CMS1 (Immune infiltrate): "),
         radioButtons(
           inputId = "cms1",
           label="",
@@ -227,7 +228,7 @@ fluidPage(
           )
         ),
       div(
-        h4("CMS2: "),
+        h6("CMS2 (Canonical pathways): "),
         radioButtons(
           inputId = "cms2",
           label="",
@@ -242,7 +243,7 @@ fluidPage(
           )
         ),
       div(
-        h4("CMS3: "),
+        h6("CMS3 (Metabolic): "),
         radioButtons(
           inputId = "cms3",
           label="",
@@ -257,7 +258,7 @@ fluidPage(
           )
         ),
       div(
-        h4("CMS4: "),
+        h6("CMS4 (Mesenchymal): "),
           radioButtons(
             inputId = "cms4",
           label="",
@@ -300,7 +301,7 @@ cms1_multiproba <-
         summarize(s = max(value)) %>% 
         unlist %>% unname %>% as.numeric()
       })
-cms1p <- reactive({cms1()*cms1_multiproba()})
+cms1p <- reactive({cms1()*max(cms1_multiproba(),cms_multidata(),na.rm = T)})
 subtypeProbas$cms1_probas <- 
   reactive({
     rbeta(
@@ -320,7 +321,7 @@ cms2_multiproba <-
         summarize(s = max(value)) %>% 
         unlist %>% unname %>% as.numeric()
       })
-cms2p <- reactive({cms2()*cms2_multiproba()})
+cms2p <- reactive({cms2()*max(cms2_multiproba(),cms_multidata(),na.rm = T)})
 subtypeProbas$cms2_probas <- 
   reactive({
     rbeta(
@@ -340,7 +341,7 @@ cms3_multiproba <-
         summarize(s = max(value)) %>% 
         unlist %>% unname %>% as.numeric()
       })
-cms3p <- reactive({cms3()*cms3_multiproba()})
+cms3p <- reactive({cms3()*max(cms3_multiproba(),cms_multidata(),na.rm = T)})
 subtypeProbas$cms3_probas <- 
   reactive({
     rbeta(
@@ -360,7 +361,7 @@ cms4_multiproba <-
         summarize(s = max(value)) %>% 
         unlist %>% unname %>% as.numeric()
       })
-cms4p <- reactive({cms4()*cms4_multiproba()})
+cms4p <- reactive({cms4()*max(cms4_multiproba(),cms_multidata(),na.rm = T)})
 subtypeProbas$cms4_probas <- 
   reactive({
     rbeta(
@@ -507,14 +508,86 @@ fluidPage(
 For physician scientists {.storyboard}
 ======
 
-### Overview of colorectal cancer (CRC)
+### Overview
 
-### CRC subtyping and treatment
+```{r}
 
-### Your patient's CRC data
+fluidPage(
+  fluidRow(
+    div(
+      class="description",
+      "There are only a few dozen drugs approved for CRC, and then also for a scoped indication. Indications are largely defined by molecular characteristics, which are the basis for disease subtypes. By visualizing the network for drugs targeting molecular characteristics, we can start to probe shared mechanisms of drugs and possiibly recommend appropriate therapies.",
+      br(),
+      "The network data was derived fromm the list of approved drugs at ",
+      tags$a(src="https://www.cancer.gov/about-cancer/treatment/drugs/colorectal","NCI"),
+      " and associated characteristics linked through scraping Drugbank."
+    )
+  )
+)
+```
+### Treatment pathways
 
-### Treatment option confidence
+```{r}
 
+graph <- 
+  read_json(
+    "drug-graph.json",
+    simplifyVector = T
+    )
+nodes <- 
+  graph$nodes
+edges <- 
+  graph$edges
+edges <- 
+  inner_join(
+    edges,
+    data.frame(
+      label = unique(edges$label),
+      color = rainbow(length(unique(edges$label)))
+      )
+  )
+edges$arrows <- "to"
+
+output$treatment_pathway <- 
+  renderVisNetwork(
+    {
+      visNetwork(nodes,edges,width="100%",height="100%") %>%
+        visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE) %>% 
+        visHierarchicalLayout(direction = "DU") %>% 
+        visEdges(color=list(highlight="red"))
+    }
+  )
+```
+
+```{r}
+
+fluidPage(
+  fluidRow(
+    div(
+      class="description",
+      "Network of drug treatments"
+    )
+  ),
+  fluidRow(
+    column(
+      12,
+      div(
+        style="height: 400px;width = 1500px,text-align: center;",
+        visNetworkOutput("treatment_pathway")
+      )
+    )
+  ),
+  fluidRow(
+    column(
+      12,
+      div(
+        class="description",
+        "By probing the interactors with different CRC treatments, we can more accurately understand drug mechanisms."
+      )
+    )
+  )
+)
+```
 For developers
 ======
 

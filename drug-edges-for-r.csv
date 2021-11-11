@@ -1,0 +1,49 @@
+from,to,Label
+Bevacizumab,C1QA,targets
+Bevacizumab,C1QB,targets
+Bevacizumab,C1QC,targets
+Bevacizumab,FCGR3A,targets
+Bevacizumab,FCGR1A,targets
+Bevacizumab,FCGR2A,targets
+Bevacizumab,FCGR2B,targets
+Bevacizumab,FCGR2C,targets
+Bevacizumab,VEGFA,targets
+Irinotecan Hydrochloride,DNA topoisomerase 1,targets
+Irinotecan Hydrochloride,"DNA topoisomerase I, mitochondrial",targets
+Irinotecan Hydrochloride,TOP1,gene product
+Irinotecan Hydrochloride,TOP1MT,gene product
+Capecitabine,Thymidylate synthase,inhibits
+TYMS,Thymidylate synthase,gene product
+Capecitabine,DNA,destabilizes
+Capecitabine,RNA,destabilizes
+Cetuximab,Low affinity immunoglobulin gamma Fc region receptor III-B,binds
+Cetuximab,Complement C1q subcomponent subunit A,binds
+Cetuximab,Complement C1q subcomponent subunit B,binds
+Cetuximab,Complement C1q subcomponent subunit C,binds
+Cetuximab,Low affinity immunoglobulin gamma Fc region receptor III-A,binds
+Cetuximab,High affinity immunoglobulin gamma Fc receptor I,binds
+Cetuximab,Low affinity immunoglobulin gamma Fc region receptor II-a,binds
+Low affinity immunoglobulin gamma Fc region receptor III-B,FCGR3B,gene product
+Complement C1q subcomponent subunit A,C1QA,gene product
+Complement C1q subcomponent subunit B,C1QB,gene product
+Complement C1q subcomponent subunit C,C1QC,gene product
+Low affinity immunoglobulin gamma Fc region receptor III-A,FCGR3A,gene product
+High affinity immunoglobulin gamma Fc receptor I,FCGR1A,gene product
+Low affinity immunoglobulin gamma Fc region receptor II-a,FCGR2A,gene product
+Ramucirumab,Vascular endothelial growth factor receptor 2,antagonist
+Vascular endothelial growth factor receptor 2,KDR,gene product
+Oxaliplatin,DNA,antagonist
+Oxaliplatin,DNA,cross-links
+Fluorouracil,DNA,destabilizes
+Fluorouracil,RNA,destabilizes
+Fluorouracil,Thymidylate synthase,unknown
+Ipilimumab,Cytotoxic T-lymphocyte protein 4,inhibits
+Ipilimumab,Cytotoxic T-lymphocyte protein 4,antibody
+Cytotoxic T-lymphocyte protein 4,CTLA4,gene product
+Pembrolizumab,Programmed cell death protein 1,inhibits
+Pembrolizumab,Programmed cell death protein 1,antibody
+Programmed cell death protein 1,PCDC1,gene product
+Leucovorin Calcium,Methylenetetrahydrofolate Reductase Deficiency,pathway
+Leucovorin Calcium,Folate Metabolism,pathway
+Leucovorin Calcium,Methotrexate Action Pathway,pathway
+Leucovorin Calcium,"Folate Malabsorption, Hereditary",pathway
