@@ -5,11 +5,17 @@ Coherent Disease Subtyping Dashboard
 
 ## Code: Please refer to https://github.com/collaborativebioinformatics/CDS-Dashboard for code related to this project
 
-## Abstract (original project plan)
+## Project Description
 
-We will build a usable proof-of-concept tool that indicates what data is available for the federation of multiple datatypes (e.g. multi-omic data) in population-scale analyses. This will differ from existing efforts insofar as not all input data must be sensu strictu fair. To achieve this goal, we will work with three example repositories; UKBioBank (scrambled data), Federated EGA (only that available in surface level API) and refine.bio. We will do a light level of NLP/Metadata Harmonization to establish disease pairing and then build a POC UI that will notify investigators of technical and regulatory requirements to proceed with the experiment (i.e. where they need to bring particular tools, and which DACs they need to apply to for the raw data, if relevant). We will also implement flexible variant annotation to extend our analysis based on existing knowledge bases. Our stretch goal will be to integrate these analyses with our current work (partially in other biohackathons) related to both graph genomes and clinical reporting.
+We built two tools based on existing literature.  The first, for clinical diagnostics, estimates the probability that any given sample in a colorectal cancer cohort is subtyped correctly.  The second, for translational researchers and clinicians, suggests potential therapeutic avenues given a colorectal cancer type and variant analysis.  
 
-## Concise results (what we actually produced) 
+### Diagnostics tool
+
+Given available validity data, this interactive tool estimates the likelihood of correct subtyping in colorectal cancer, given the Guinney, et al classification systme (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4636487/), and the data obtained by a number of research or diagnostic datasets.  References for validity measurement of each datatype and combinations thereof are available in the supplementary information file contained in this repo <link>.  It is our hope that this approach -- and code -- can be used to build such interactive tools for many diseases, as well as advise diagnostic groups on how to set up validity assessments.  
+
+### Translational and Clinical tool (RUO)  
+
+Given available drug efficacy data, this interactive tool recommends extant approved drug that may be appropriate for subjects given their CRC subtype classification, and variant information where available.  References for trial data and gene/pathway associations are available in the supplementary information file contained in this repo <link>.  It is our hope that this approach -- and code -- can be used to build such interactive tools for many diseases.  
 
 ### Example Use Case: Subtyping of colorectal cancer:
 
@@ -25,10 +31,6 @@ Nat Med. 2015 Nov; 21(11): 1350–1356.
 
 Cancers (Basel). 2021 Oct; 13(19): 4923.
 
-### Subtypes (subgraphs) of type
-
-#### Example -- TIL infiltrated/MMR as subgraphs of type 1.  
-
 #### Treatment options
 
 ![Treatment Options](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Treatment_options_for_subtypes.png)
@@ -43,9 +45,7 @@ Cancers (Basel). 2021 Oct; 13(19): 4923.
 
 ![Researcher Dashboard](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Researchers_dashboard.png)
 
-![Contribution graph](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Clin_diagnostics_graph_github.png)
-
-### Prototype disease subtyping dashboard for "developers"
+### Prototype disease subtyping dashboard for those who want to directly change the bayesian knowledge graph
 
 ![Developer Dashboard](https://github.com/collaborativebioinformatics/CDS-Dashboard/blob/main/Developers_dashboard.png)
 
@@ -56,9 +56,13 @@ Cancers (Basel). 2021 Oct; 13(19): 4923.
 #### Transcriptome
 #### Single cell
 #### PRS and single variants (popgen)
-#### miRNA (thanks FederatedEGA!)
+#### miRNA
 #### Metagenomes (for treatment options subgraph)
 #### Epigenomics (coming soon)
+
+### Future directions
+
+For a given disease we would like to be able to suggest appropriate clinical diagnostic combinations that maximize the accuracy of potential treatment options.  Concurrently, we would like to be able to generate an information density graph for putative disease subtypes, highlighting pathways and variants that may be especially relevant to subjects within them.  It is our hope that this work will continue over a number of hackathons as well as more pedestrian software development engagements.  
 
 ## Team
 
@@ -71,13 +75,10 @@ Anthony Costa
 Vivian Neilley 
 Nuria Queralt Rosinach
 Jerven Bolleman
+Aina Jene
 
 ### Lead(s)
 
 Ben Busby bbusby@dnanexus.com
-
-### Acknowledgements
-
-#### Thanks to Aina for help with Federated EGA.  Thanks to her colleagues for being patient with me interrupting their zoom call this morning.  
 
 ### Thank you!
