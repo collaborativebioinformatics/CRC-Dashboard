@@ -66,7 +66,7 @@ https://nick-giangreco.shinyapps.io/cds-dashboard/
 
 ### Future directions
 
-For a given disease we would like to be able to suggest appropriate clinical diagnostic combinations that maximize the accuracy of potential treatment options.  Concurrently, we would like to be able to generate an information density graph for putative disease subtypes, highlighting pathways and variants that may be especially relevant to subjects within them.  It is our hope that this work will continue over a number of hackathons as well as more pedestrian software development engagements.  
+We are able to predict appropriate clinical diagnostic combinations that maximize the accuracy of potential treatment options.  Concurrently, we would like to be able to generate an information density graph (radar plot) for putative disease subtypes, highlighting pathways and variants that may be especially relevant to subjects within them.  It is our hope that this work will continue over a number of hackathons as well as more pedestrian software development engagements after oncologist review.  
 
 ## Team
 
