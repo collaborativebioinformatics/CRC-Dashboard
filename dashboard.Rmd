@@ -32,26 +32,20 @@ b=1+(n-p*n)
 
 subtype_distributions =
     list(
-        "Not certain" = function()rbeta(N,10,10),
-        "More-than-not certain" = function()rbeta(N,2,1),
-        "Kinda certain" = function()rbeta(N,3,1),
-        "Sorta certain" = function()rbeta(N,4,1),
-        "Pretty certain" = function()rbeta(N,5,1)
+        "No additional data" = function()rbeta(N,10,10),
+        "Additional data" = function()rbeta(N,4,1)
     )
 
 certainty_probas <- 
     list(
-        "Not certain" = 0.2,
-        "More-than-not certain" = 0.4,
-        "Kinda certain" = 0.6,
-        "Sorta certain" = 0.8,
-        "Pretty certain" = 0.99
+        "No additional data" = 0.5,
+        "Additional data" = 0.9
     )
   
-cms1probas <- subtype_distributions[["Not certain"]]()
-cms2probas <- subtype_distributions[["Not certain"]]()
-cms3probas <- subtype_distributions[["Not certain"]]()
-cms4probas <- subtype_distributions[["Pretty certain"]]()
+cms1probas <- subtype_distributions[["No additional data"]]()
+cms2probas <- subtype_distributions[["No additional data"]]()
+cms3probas <- subtype_distributions[["No additional data"]]()
+cms4probas <- subtype_distributions[["Additional data"]]()
 
 example_subtype_credible_data <- 
     tibble(
@@ -206,7 +200,7 @@ fluidPage(
       checkboxGroupInput(
         "multidata",
         label = h6("Data types"),
-        choices = c("Bulk RNA","ssRNA","PRS","miRNA","NanoString"),
+        choices = c("Bulk RNA","ssRNA","PRS","miRNA","NanoString","WGS"),
         selected="Bulk RNA"
         )
     )
@@ -218,13 +212,10 @@ fluidPage(
           inputId = "cms1",
           label="",
           choices = c(
-            "Not certain",
-            "More-than-not certain",
-            "Kinda certain",
-            "Sorta certain",
-            "Pretty certain"
+            "No additional data",
+            "Additional data"
             ),
-          selected = "Not certain"
+          selected = "No additional data"
           )
         ),
       div(
@@ -233,13 +224,10 @@ fluidPage(
           inputId = "cms2",
           label="",
           choices = c(
-            "Not certain",
-            "More-than-not certain",
-            "Kinda certain",
-            "Sorta certain",
-            "Pretty certain"
+            "No additional data",
+            "Additional data"
             ),
-          selected = "Not certain"
+          selected = "No additional data"
           )
         ),
       div(
@@ -248,13 +236,10 @@ fluidPage(
           inputId = "cms3",
           label="",
           choices = c(
-            "Not certain",
-            "More-than-not certain",
-            "Kinda certain",
-            "Sorta certain",
-            "Pretty certain"
+            "No additional data",
+            "Additional data"
             ),
-          selected = "Not certain"
+          selected = "No additional data"
           )
         ),
       div(
@@ -263,14 +248,11 @@ fluidPage(
             inputId = "cms4",
           label="",
           choices = c(
-            "Not certain",
-            "More-than-not certain",
-            "Kinda certain",
-            "Sorta certain",
-            "Pretty certain"
+            "No additional data",
+            "Additional data"
             ),
-            selected = "Not certain"
-            )
+          selected = "No additional data"
+          )
          )
     )
   )
@@ -618,7 +600,7 @@ fluidPage(
   fluidRow(
     column(
       12,
-      h3("Not certain for any CRC subtype"),
+      h3("No additional data for any CRC subtype"),
       renderPlot(
         {
             tibble(
@@ -628,10 +610,10 @@ fluidPage(
                   rep("CMS3",N),
                   rep("CMS4",N)),
               probability = c(
-                  subtype_distributions[["Not certain"]](),
-                  subtype_distributions[["Not certain"]](),
-                  subtype_distributions[["Not certain"]](),
-                  subtype_distributions[["Not certain"]]()
+                  subtype_distributions[["No additional data"]](),
+                  subtype_distributions[["No additional data"]](),
+                  subtype_distributions[["No additional data"]](),
+                  subtype_distributions[["No additional data"]]()
                   )
           ) %>% 
               ggplot(aes(probability,color=subtype)) +
@@ -645,7 +627,7 @@ fluidPage(
   fluidRow(
     column(
       12,
-      h3("Pretty certain for one CRC subtype"),
+      h3("Additional data for one CRC subtype"),
       renderPlot(
         {
           tibble(
@@ -655,10 +637,10 @@ fluidPage(
                 rep("CMS3",N),
                 rep("CMS4",N)),
             probability = c(
-                subtype_distributions[["Pretty certain"]](),
-                subtype_distributions[["Not certain"]](),
-                subtype_distributions[["Not certain"]](),
-                subtype_distributions[["Not certain"]]()
+                subtype_distributions[["Additional data"]](),
+                subtype_distributions[["No additional data"]](),
+                subtype_distributions[["No additional data"]](),
+                subtype_distributions[["No additional data"]]()
                 )
         ) %>% 
             ggplot(aes(probability,color=subtype)) +

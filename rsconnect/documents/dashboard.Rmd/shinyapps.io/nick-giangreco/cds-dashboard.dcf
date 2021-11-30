@@ -1,0 +1,13 @@
+name: cds-dashboard
+title: cds-dashboard
+username:
+account: nick-giangreco
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5109034
+bundleId: 5311653
+url: https://nick-giangreco.shinyapps.io/cds-dashboard/
+when: 1638312122.21174
+lastSyncTime: 1638312122.21175
+asMultiple: FALSE
+asStatic: FALSE
