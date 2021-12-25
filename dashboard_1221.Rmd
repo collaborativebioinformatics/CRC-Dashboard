@@ -1,0 +1,655 @@
+---
+title: "CRC Subtyping App"
+output: 
+  flexdashboard::flex_dashboard:
+    storyboard: true
+    theme: 
+      bootswatch: minty
+    css: extra.css
+runtime: shiny
+theme: journal
+---
+
+```{r global, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(shinydashboard)
+library(tidyverse)
+library(visNetwork)
+library(jsonlite)
+
+theme_set(theme_classic() + theme(text = element_text(size=16,face="bold")))
+
+```
+
+```{r data}
+#https://stats.stackexchange.com/questions/495981/update-beta-distributed-prior-with-data-that-is-a-probability
+N=1000
+p=0.5
+n=1000
+a=1+p*n
+b=1+(n-p*n)
+
+subtype_distributions =
+    list(
+        "No additional data" = function()rbeta(N,10,10),
+        "Additional data" = function()rbeta(N,4,1)
+    )
+
+certainty_probas <- 
+    list(
+        "No additional data" = 0.5,
+        "Additional data" = 0.9
+    )
+  
+cms1probas <- subtype_distributions[["No additional data"]]()
+cms2probas <- subtype_distributions[["No additional data"]]()
+cms3probas <- subtype_distributions[["No additional data"]]()
+cms4probas <- subtype_distributions[["Additional data"]]()
+
+example_subtype_credible_data <- 
+    tibble(
+        lwr = c(
+            quantile(cms1probas,c(0.025)) %>% unname,
+            quantile(cms2probas,c(0.025)) %>% unname,
+            quantile(cms3probas,c(0.025)) %>% unname,
+            quantile(cms4probas,c(0.025)) %>% unname
+        ),
+        m = c(
+            mean(cms1probas),
+            mean(cms2probas),
+            mean(cms3probas),
+            mean(cms4probas)
+        ),
+        upr = c(
+            quantile(cms1probas,c(0.975)) %>% unname,
+            quantile(cms2probas,c(0.975)) %>% unname,
+            quantile(cms3probas,c(0.975)) %>% unname,
+            quantile(cms4probas,c(0.975)) %>% unname
+        ),
+        subtype = c(
+            "CMS1",
+            "CMS2",
+            "CMS3",
+            "CMS4"
+        )
+    )
+```
+
+Welcome
+=====
+
+```{r}
+
+fluidPage(
+  fluidRow(
+    div(
+      class = "welcome",
+      "Different molecular characteristics make up accepted subtypes of disease. These subtypes are well defined in colorectal cancer (CRC).  Data types such as gene expression, provide different facets of information about disease subtype. Combinations of data types can be used to give more accurate diagnoses.  In colorectal cancer, the effectiveness of known and experimental treatments has been demonstrated to be subtype dependent."
+    )
+  ),
+  fluidRow(
+    box(
+      h5("How accurate is your diagnostic framework?? Choose 'For researchers' above"),
+      img(class="icon",src="researcher.png")
+    ),
+    box(
+      h5("Are you a clinician interested in treatment options for your patient? Choose 'For physician scientists' above"),
+      img(class="icon",src="clinician.png")
+    ),
+    box(
+      h5("Are you a developer or computational biologistinterested in how the bayesian inference is done? Choose 'For developers' above"),
+      img(class="icon",src="developer.png")
+    )
+  ),
+  fillRow(
+    column(
+      12,
+      div(
+        class="description",
+        h4("Acknowledgements:"),
+        "Developed by Nick Giangreco, Emerson Huitt, Ben Busby, Ames Ma, Gervaise Henry, and Anthony Costa. Please refer to https://github.com/collaborativebioinformatics/CDS-Dashboard for code related to this project"
+        )
+    )
+  )
+)
+```
+
+
+For researchers {.storyboard}
+======
+
+### Overview
+
+```{r}
+
+fluidPage(
+  fluidRow(
+    column(
+      12,
+      div(
+        class="description",
+        "Colorectal cancer (CRC) is a heterogeneous cancer that has been recently deep-profiled for molecular characteristics. ",
+        img(class="medium-pic",src="CRC.png"),
+        "We next detail the groups of CRC based on molecular characteristics."
+        )
+      )
+    ),
+    fluidRow(
+    column(
+      12,
+      div(
+      class="description",
+      "There are four accepted molecular subtypes i.e. the consensus molecular subtype (CMS) that explain colorectal cancers.",
+      br(),
+      a(href="https://www.nature.com/articles/nm.3967","This reference showed that the CMS is a subtyping classification based on marker expression data across expert groups")
+    )
+    )
+  ),
+  fluidRow(
+    column(
+      12,
+      img(class="medium-pic",src="nihms-1039672-f0002.jpeg"),
+      tags$a(href="https://pubmed.ncbi.nlm.nih.gov/30701321/","Reference")
+    )
+  ),
+  fluidRow(
+    column(
+      12,
+      div(
+      class="description",
+      "How likely are we in correctly subtyping disease, given the confidence our data is showing characteristics for accepted subtypes? How might this confidence change with evidence from different datatypes?"
+    )
+    )
+  )
+  )
+```
+
+### Subtyping your data
+
+```{r json_graph}
+
+graph_lst <- jsonlite::read_json("initial-graph.json",simplifyVector = T)
+
+```
+
+```{r cms_types}
+
+fluidPage(
+  fluidRow(
+    column(
+      12,
+      div(
+        class="description",
+        "How confident are you in the CRC subtypes in your dataset, how large is your cohort (i.e. provide the rough generalizability of your evidence), and which datatypes did you use to identify them?"
+        )
+      )
+    ),
+  fluidRow(
+    column(
+      12,
+      div(
+        textInput("cohort_size",h6("Cohort size"),value=c(100),placeholder = 100)
+      )
+    )
+  ),
+  fluidRow(
+    div(
+      style="description",
+      align = "center",
+      checkboxGroupInput(
+        "multidata",
+        label = h6("Data types"),
+        choices = c("Bulk RNA","ssRNA","PRS","miRNA","NanoString","WGS"),
+        selected="Bulk RNA"
+        )
+    )
+  ),
+  fillRow(
+      div(
+        h6("CMS1 (Immune infiltrate): "),
+        radioButtons(
+          inputId = "cms1",
+          label="",
+          choices = c(
+            "No additional data",
+            "Additional data"
+            ),
+          selected = "No additional data"
+          )
+        ),
+      div(
+        h6("CMS2 (Canonical pathways): "),
+        radioButtons(
+          inputId = "cms2",
+          label="",
+          choices = c(
+            "No additional data",
+            "Additional data"
+            ),
+          selected = "No additional data"
+          )
+        ),
+      div(
+        h6("CMS3 (Metabolic): "),
+        radioButtons(
+          inputId = "cms3",
+          label="",
+          choices = c(
+            "No additional data",
+            "Additional data"
+            ),
+          selected = "No additional data"
+          )
+        ),
+      div(
+        h6("CMS4 (Mesenchymal): "),
+          radioButtons(
+            inputId = "cms4",
+          label="",
+          choices = c(
+            "No additional data",
+            "Additional data"
+            ),
+          selected = "No additional data"
+          )
+         )
+    )
+  )
+
+```
+
+```{r reactivity}
+subtypeProbas <- reactiveValues()
+
+cohort_size <- reactive({input$cohort_size %>% as.numeric()})
+cms_multidata <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(from %in% input$multidata &
+                 !is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms1 <- reactive({certainty_probas[[input$cms1]] %>% as.numeric()})
+cms1_multiproba <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(to=="CMS1" & 
+                 from %in% input$multidata &
+                 is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms1p <- reactive({cms1()*max(cms1_multiproba(),cms_multidata(),na.rm = T)})
+subtypeProbas$cms1_probas <- 
+  reactive({
+    rbeta(
+      N,
+      1+cms1p()*cohort_size(),
+      1+(cohort_size()-cms1p()*cohort_size())
+      )
+    })
+cms2 <- reactive({certainty_probas[[input$cms2]] %>% as.numeric()})
+cms2_multiproba <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(to=="CMS2" & 
+                 from %in% input$multidata &
+                 is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms2p <- reactive({cms2()*max(cms2_multiproba(),cms_multidata(),na.rm = T)})
+subtypeProbas$cms2_probas <- 
+  reactive({
+    rbeta(
+      N,
+      1+cms2p()*cohort_size(),
+      1+(cohort_size()-cms2p()*cohort_size())
+      )
+    })
+cms3 <- reactive({certainty_probas[[input$cms3]] %>% as.numeric()})
+cms3_multiproba <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(to=="CMS3" & 
+                 from %in% input$multidata &
+                 is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms3p <- reactive({cms3()*max(cms3_multiproba(),cms_multidata(),na.rm = T)})
+subtypeProbas$cms3_probas <- 
+  reactive({
+    rbeta(
+      N,
+      1+cms3p()*cohort_size(),
+      1+(cohort_size()-cms3p()*cohort_size())
+      )
+    })
+cms4 <- reactive({certainty_probas[[input$cms4]] %>% as.numeric()})
+cms4_multiproba <- 
+      reactive({
+        graph_lst$edges %>% 
+        filter(to=="CMS4" & 
+                 from %in% input$multidata &
+                 is.na(title)) %>% 
+        distinct(from,value) %>% 
+        summarize(s = max(value)) %>% 
+        unlist %>% unname %>% as.numeric()
+      })
+cms4p <- reactive({cms4()*max(cms4_multiproba(),cms_multidata(),na.rm = T)})
+subtypeProbas$cms4_probas <- 
+  reactive({
+    rbeta(
+      N,
+      1+cms4p()*cohort_size(),
+      1+(cohort_size()-cms4p()*cohort_size())
+      )
+    })
+
+subtypeProbasDT <- 
+    reactive({
+        tibble(
+            values = c(
+                subtypeProbas$cms1_probas(),
+                subtypeProbas$cms2_probas(),
+                subtypeProbas$cms3_probas(),
+                subtypeProbas$cms4_probas()
+            ),
+            subtype = c(
+                rep("CMS1",N),
+                rep("CMS2",N),
+                rep("CMS3",N),
+                rep("CMS4",N)
+                )
+        )
+    })
+
+observe({
+    shinyjs::toggleElement(id="chance_text_div",condition=!is.na(input$multidata))
+  })
+
+```
+
+### Subtyping confidence
+
+```{r credible_data}
+
+fluidPage(
+  fluidRow(
+    column(
+      12,
+      div(
+      class="description",
+      "Of the previous evidence, we are this certain of our CRC subtyping:"
+      ),
+      div(
+        style="font-size: 30px; text-align: center;",
+        renderText(
+          {
+            tab <- 
+              subtypeProbasDT() %>% 
+              group_by(subtype) %>% 
+              summarize(m = mean(values)) %>% 
+              arrange(m) %>% 
+              tail(1)
+          name <- 
+              tab %>% select(subtype) %>% unlist %>% unname
+          name
+          }
+        )
+      ),
+      div(
+      renderGauge(
+        {
+          tab <- 
+              subtypeProbasDT() %>% 
+              group_by(subtype) %>% 
+              summarize(m = mean(values)) %>% 
+              arrange(m) %>% 
+              tail(1)
+          val <- 
+              tab %>% select(m) %>% unlist %>% unname
+          name <- 
+              tab %>% select(subtype) %>% unlist %>% unname
+          gauge(
+            round(val,2),
+            min = 0, max = 1, 
+            label = "",symbol = '%', 
+            gaugeSectors(
+              success = c(50, 100), warning = c(30, 49), danger = c(0, 29),
+              colors = c("green", "orange", "red")
+              )
+          )
+        }
+      )
+      )
+    )
+    ),
+  fluidRow(
+    column(
+      12,
+      align="center",
+      div(
+        style="font-size: 20px; text-align: left;",
+        "Here is our uncertainty in defining CRC subtypes in our data:"
+      ),
+      div(
+      renderPlot(
+        {
+        subtypeProbasDT() %>% 
+                group_by(subtype) %>% 
+                summarize(
+                    lwr = mean(values) - sd(values),
+                    m = mean(values),
+                    upr = mean(values) + sd(values)
+                ) %>% 
+                ggplot(aes(m,subtype)) + 
+                geom_point() + 
+                geom_errorbarh(
+                    aes(xmin=lwr,xmax=upr),
+                    height=0.1
+                    ) +
+                scale_x_continuous(lim=c(0,1)) + 
+                xlab("Credible Interval") + 
+                ylab("") + 
+                theme(
+                    legend.position = "none",
+                    axis.ticks.y = element_blank(),
+                    axis.line.y  = element_blank(),
+                    axis.text.x = element_text(size=10,face="bold")
+                    )
+        
+        },
+        height = 200,
+        width=800,
+        )
+      )
+    )
+    ),
+  fluidRow(
+    column(
+      12,
+      div(
+        class="description",
+        "Collecting more data with other datatypes may change your CRC subtyping. Go back, change parameters, and see how you can increase your subtyping abilities!"
+      )
+    )
+  )
+  )
+
+```
+
+
+For physician scientists {.storyboard}
+======
+
+### Overview
+
+```{r}
+
+fluidPage(
+  fluidRow(
+    div(
+      class="description",
+      "There are only a few dozen drugs approved for CRC, and then also for a scoped indication. Indications are largely defined by molecular characteristics, which are the basis for disease subtypes. By visualizing the network for drugs targeting molecular characteristics, we can start to probe shared mechanisms of drugs and possiibly recommend appropriate therapies.",
+      br(),
+      "The network data was derived fromm the list of approved drugs at ",
+      tags$a(src="https://www.cancer.gov/about-cancer/treatment/drugs/colorectal","NCI"),
+      " and associated characteristics linked through scraping Drugbank."
+    )
+  )
+)
+```
+### Treatment pathways
+
+```{r}
+
+graph <- 
+  read_json(
+    "drug-graph.json",
+    simplifyVector = T
+    )
+nodes <- 
+  graph$nodes %>% 
+  rename(group = type)
+edges <- 
+  graph$edges %>% 
+  rename(type = label)
+edges$arrows <- "to"
+
+output$treatment_pathway <- 
+  renderVisNetwork(
+    {
+      visNetwork(nodes,edges,width="100%",height="100%") %>%
+        visNodes(
+          shape = "square",
+          color = list(
+            background = "lightgray", 
+            border = "darkgray",
+            highlight = "yellow"
+            ),
+          shadow = list(
+            enabled = TRUE, 
+            size = 10
+            )
+          ) %>% 
+        visEdges(
+          color=list(
+            color="lightgray",
+            highlight="red"
+            )
+          ) %>% 
+        visInteraction(
+          navigationButtons = TRUE
+          ) %>% 
+        visOptions(
+          manipulation = TRUE
+          )
+    }
+  )
+```
+
+```{r}
+
+fluidPage(
+  fluidRow(
+    div(
+      class="description",
+      "By probing the interactors with different CRC treatments, we can more accurately understand drug mechanisms."
+    )
+  ),
+  fluidRow(
+    column(
+      12,
+      div(
+        style="height: 250px;width = 1500px,text-align: center;",
+        visNetworkOutput("treatment_pathway")
+      )
+    )
+  ),
+  fillRow(
+      div(
+        class="description",
+        selectInput("cms_type",label = h6("CMS type"),choices = c("CMS1","CMS2","CMS3","CMS4"))
+      ),
+      div(
+        class="description",
+        selectInput("known_mutations",label = h6("Are there nonsynonymous mutations in these genes?"),choices=c("KIT","PDGFRA","FGFR2","BRAF","ABL1"))
+      ),
+      div(
+        class="description",
+        textInput("expressed_genes",label = h6("Expressed genes: "),placeholder = "TP53")
+      )
+    )
+)
+```
+
+For developers
+======
+
+```{r}
+
+fluidPage(
+  fluidRow(
+    column(
+      12,
+      h3("No additional data for any CRC subtype"),
+      renderPlot(
+        {
+            tibble(
+              subtype = c(
+                  rep("CMS1",N),
+                  rep("CMS2",N),
+                  rep("CMS3",N),
+                  rep("CMS4",N)),
+              probability = c(
+                  subtype_distributions[["No additional data"]](),
+                  subtype_distributions[["No additional data"]](),
+                  subtype_distributions[["No additional data"]](),
+                  subtype_distributions[["No additional data"]]()
+                  )
+          ) %>% 
+              ggplot(aes(probability,color=subtype)) +
+              geom_density() +
+              xlab("Probability") +
+              ylab("Likelihood")
+        },height = 300
+      )
+    )
+  ),
+  fluidRow(
+    column(
+      12,
+      h3("Additional data for one CRC subtype"),
+      renderPlot(
+        {
+          tibble(
+            subtype = c(
+                rep("CMS1",N),
+                rep("CMS2",N),
+                rep("CMS3",N),
+                rep("CMS4",N)),
+            probability = c(
+                subtype_distributions[["Additional data"]](),
+                subtype_distributions[["No additional data"]](),
+                subtype_distributions[["No additional data"]](),
+                subtype_distributions[["No additional data"]]()
+                )
+        ) %>% 
+            ggplot(aes(probability,color=subtype)) +
+            geom_density() +
+            xlab("Probability") +
+            ylab("Likelihood")
+        },height=300
+      )
+    )
+  )
+)
+```
