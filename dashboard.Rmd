@@ -653,3 +653,21 @@ fluidPage(
   )
 )
 ```
+
+RADAR PLOT
+======
+
+```{r}
+
+fluidPage(
+  fluidRow(
+    column(
+      12,
+      h3("Radar plot"),
+      renderPlot({
+        plot(1:5,1:5)
+      },height = 600)
+    )
+  )
+)
+```
