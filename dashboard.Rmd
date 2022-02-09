@@ -18,6 +18,12 @@ library(tidyverse)
 library(visNetwork)
 library(jsonlite)
 
+devtools::install_github("ricardo-bion/ggradar", 
+                          dependencies = TRUE)
+library(scales)
+library(tibble)
+library(ggradar)
+
 theme_set(theme_classic() + theme(text = element_text(size=16,face="bold")))
 
 ```
@@ -654,8 +660,12 @@ fluidPage(
 )
 ```
 
+### DEV
+
 RADAR PLOT
 ======
+
+Using this [r-graph gallery](https://www.r-graph-gallery.com/spider-or-radar-chart.html) and the [ggradar package](https://github.com/ricardo-bion/ggradar) for inspiration. 
 
 ```{r}
 
@@ -664,8 +674,20 @@ fluidPage(
     column(
       12,
       h3("Radar plot"),
+      renderTable({
+        mtcars %>% 
+          as_tibble(rownames = "group") %>% 
+          mutate_at(vars(-group), rescale) %>% 
+          tail(4) %>% 
+          select(1:10)
+      }),
       renderPlot({
-        plot(1:5,1:5)
+        mtcars %>% 
+          as_tibble(rownames = "group") %>% 
+          mutate_at(vars(-group), rescale) %>% 
+          tail(4) %>% 
+          select(1:10) %>% 
+          ggradar()
       },height = 600)
     )
   )
